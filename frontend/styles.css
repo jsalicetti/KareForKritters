@@ -1,0 +1,387 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6; /* Light gray background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header styles */
+.header {
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    margin-left: -50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 
+}
+
+.logo-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #e5e7eb;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.nav-and-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation menu styles */
+.nav-menu {
+    display: flex;
+    margin-right: 2rem;
+    font-size: large;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+    padding: 0.5rem 1rem;
+    margin-top: 5%;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.dropdown {
+    font-size: medium;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    color: #000;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f3f4f6;
+}
+
+/* Header actions styles */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    margin-right: 1rem;
+   
+}
+
+.search-input {
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.login-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    right: -40%;
+}
+
+/* Hero banner styles */
+.hero-banner {
+    position: relative;
+    height: 500px;
+    background-image: url('/placeholder.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-quote {
+    color: #fff;
+    font-size: 1.875rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Donation section styles */
+.donation-section {
+    margin: 3rem 0;
+}
+
+.donation-items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.donation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* dog monthly donation image*/
+.image-placeholder1 {
+    width: 16rem;
+    height: 16rem;
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-left: -250%;
+}
+
+/* cat donate image */
+.image-placeholder2 {
+    width: 16rem;
+    height: 16rem;
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-left: 230%;
+}
+
+.donation-button1 {
+    width: 16rem;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-left: -250%;
+}
+
+.donation-button2 {
+    width: 16rem;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-left: 230%;
+}
+
+/* mission statement styles */
+.mission-statement {
+    text-align: center;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+
+/* happily ever afters section styles */
+.happily-ever-afters {
+    margin-bottom: 3rem;
+}
+
+.happily-ever-afters h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.pet-stories {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* lorem text for happily ever after images*/
+.pet-story1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16rem;
+    top: 100%;
+    left: -50%;
+    
+}
+
+.pet-story2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16rem;
+    text-align: center;
+    
+}
+
+.pet-story3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16rem;
+}
+
+.pet-story p {
+    font-size: 0.875rem;
+   
+}
+
+
+/* text story */
+.text-placeholder3 {
+    margin-left: -410%;
+    align-items: center;
+}
+
+.text-placeholder4 {
+    margin-left: 9%;
+    align-items: center;
+}
+
+.text-placeholder5 {
+    align-items: center;
+    margin-left: 380%;
+    white-space: nowrap;
+
+   
+}
+
+
+/* happily ever after images */
+.image-placeholder3 {
+    width: 16rem;
+    height: 16rem;
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-left: -400%;
+}
+
+.image-placeholder4 {
+    width: 16rem;
+    height: 16rem;
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-left: 10%;
+}
+
+.image-placeholder5 {
+    width: 16rem;
+    height: 16rem;
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    margin-left: 385%;
+}
+
+
+
+
+/* Newsletter signup styles */
+.newsletter-signup {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.newsletter-signup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+.email-input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+}
+
+.submit-button {
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+
