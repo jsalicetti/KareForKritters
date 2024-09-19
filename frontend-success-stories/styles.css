@@ -2,15 +2,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3f4f6; /* Light gray background */
+    background-color: #f3f4f6;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    font-size: xx-large;
 }
+
+
+
 
 /* header styles */
 .header {
@@ -19,6 +21,7 @@ body {
     top: 0;
     z-index: 50;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top:
 }
 
 .header-content {
@@ -43,7 +46,6 @@ body {
     background-color: #e5e7eb;
     border-radius: 50%;
     margin-right: 0.5rem;
-    
 }
 
 .site-title {
@@ -56,6 +58,9 @@ body {
     display: flex;
     align-items: center;
 }
+
+
+
 
 /* nav menu styles */
 .nav-menu {
@@ -112,17 +117,21 @@ body {
     background-color: #4a98ea;
 }
 
+
+
+
+
 /* header actions styles */
 .header-actions {
     display: flex;
     align-items: center;
-    margin-top: -1%;
+    margin-top: 3%;
 }
 
 .search-container {
     position: relative;
     margin-right: 1rem;
-   
+    margin-top: -9%;
 }
 
 .search-input {
@@ -134,10 +143,10 @@ body {
 .search-icon {
     position: absolute;
     right: 0.5rem;
-    top: 60%;
+    top: 48%;
     transform: translateY(-50%);
     color: #9ca3af;
-    font-size:medium;
+    font-size: medium;
 }
 
 .login-button {
@@ -148,12 +157,54 @@ body {
     cursor: pointer;
     margin-left: 1rem;
     right: -40%;
-    margin-bottom: -3%;
+    margin-bottom: 9%;
 }
 
-/* about us header and paragraph */
-#container1 {
+
+
+
+/* success Stories styles */
+.success-stories-main {
+    padding: 2rem 0;
+}
+
+.success-stories-main h1 {
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.success-stories-main h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.success-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.success-story {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-image {
+    height: 200px;
+    background-color: #e5e7eb;
+    background-size: cover;
+    background-position: center;
+}
+
+.success-story p {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 
@@ -165,6 +216,7 @@ body {
     color: #fff;
     padding: 3rem 0;
     text-align: center;
+    margin-bottom: -10%;
 }
 
 .newsletter-signup h2 {
@@ -193,4 +245,35 @@ body {
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
+}
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-and-actions {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-menu {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .success-stories-grid {
+        grid-template-columns: 1fr;
+    }
 }
