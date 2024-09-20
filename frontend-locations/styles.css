@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3f4f6;
+    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed */
 }
 
 .container {
@@ -48,7 +48,7 @@ body {
 }
 
 .site-title {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     font-family: Arial, sans-serif;
 }
@@ -170,13 +170,13 @@ body {
 }
 
 .locations-main h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
 }
 
 .locations-main h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
     color: #666;
     margin-bottom: 2rem;
@@ -185,6 +185,7 @@ body {
 .our-centers {
     display: flex;
     margin-bottom: 2rem;
+    font-size: xx-large;
 }
 
 .map-placeholder {
@@ -196,7 +197,7 @@ body {
 .centers-info {
     width: 50%;
     padding-left: 2rem;
-    font-size: x;
+    font-size: x-large;
 }
 
 .centers-info h3 {
@@ -220,14 +221,27 @@ body {
 
 .location-icon {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
+
 .location h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-family: "Times New Roman", Times, serif;
+font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  text-shadow: 
+    0px 1px 0px #999,
+    0px 2px 0px #888,
+    0px 3px 0px #777,
+    0px 4px 0px #666,
+    0px 5px 0px #555,
+    0px 6px 0px #444,
+    0px 7px 0px #333,
+    0px 8px 7px #001135;
 }
+
 
 .location p {
     margin-bottom: 1rem;

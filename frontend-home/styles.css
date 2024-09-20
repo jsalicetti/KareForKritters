@@ -3,8 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3f4f6; /* Light gray background */
+    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed */
+
 }
+
+
+/* color option for body - save for later - #6187d197 */
 
 .container {
     max-width: 1200px;
@@ -35,7 +39,6 @@ body {
     color: #fff;
     margin-left: -50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 
 }
 
 .logo-image {
@@ -43,12 +46,12 @@ body {
     height: 2.5rem;
     background-color: #e5e7eb;
     border-radius: 50%;
-    margin-right: 0.5rem;
+    margin-right: 1.5rem;
     
 }
 
 .site-title {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     font-family: Arial, sans-serif;
 }
@@ -110,7 +113,7 @@ body {
 }
 
 .dropdown a:hover {
-    background-color: #4a98ea;
+    background-color:#4a98ea;
 }
 
 /* header actions styles */
@@ -187,7 +190,7 @@ body {
     font-size: 24px;
     text-align: center;
     max-width: 800px;
-    margin: 0;
+    margin-top: 6%;
 }
 
 /* Donation section styles */
@@ -216,6 +219,7 @@ body {
     overflow: hidden;
     margin-bottom: 1rem;
     margin-left: -250%;
+    border: solid black;
 }
 
 /* cat donate image */
@@ -227,6 +231,7 @@ body {
     overflow: hidden;
     margin-bottom: 1rem;
     margin-left: 230%;
+    border: solid black;
 }
 
 .donation-button1 {
@@ -252,20 +257,30 @@ body {
 }
 
 /* mission statement styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 .mission-statement {
+    font-family: 'Playfair Display', Georgia, serif;
     text-align: center;
-    font-size: 1.125rem;
+    font-size: xx-large;
     margin-bottom: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333;
 }
+
 
 /* happily ever afters section styles */
 .happily-ever-afters {
     margin-bottom: 3rem;
+    width: 100%;
+    padding:0;
+    
 }
 
 .happily-ever-afters h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
 }
 
@@ -312,19 +327,20 @@ body {
 .text-placeholder3 {
     margin-left: -410%;
     align-items: center;
+    font-size: x-large;
 }
 
 .text-placeholder4 {
     margin-left: 9%;
     align-items: center;
+    font-size: x-large;
 }
 
 .text-placeholder5 {
     align-items: center;
     margin-left: 380%;
     white-space: nowrap;
-
-   
+    font-size: x-large;  
 }
 
 
@@ -337,6 +353,7 @@ body {
     overflow: hidden;
     margin-bottom: 1rem;
     margin-left: -400%;
+    border: solid black;
 }
 
 .image-placeholder4 {
@@ -347,6 +364,7 @@ body {
     overflow: hidden;
     margin-bottom: 1rem;
     margin-left: 10%;
+    border: solid black;
 }
 
 .image-placeholder5 {
@@ -357,6 +375,7 @@ body {
     overflow: hidden;
     margin-bottom: 1rem;
     margin-left: 385%;
+    border: solid black;
 }
 
 

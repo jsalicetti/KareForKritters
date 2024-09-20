@@ -9,10 +9,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    font-size: xx-large;
 }
 
-/* header styles */
+/* Header styles (unchanged) */
 .header {
     background-color: #000;
     position: sticky;
@@ -43,7 +42,6 @@ body {
     background-color: #e5e7eb;
     border-radius: 50%;
     margin-right: 0.5rem;
-    
 }
 
 .site-title {
@@ -57,7 +55,6 @@ body {
     align-items: center;
 }
 
-/* nav menu styles */
 .nav-menu {
     display: flex;
     margin-right: 2rem;
@@ -112,7 +109,6 @@ body {
     background-color: #4a98ea;
 }
 
-/* header actions styles */
 .header-actions {
     display: flex;
     align-items: center;
@@ -122,7 +118,6 @@ body {
 .search-container {
     position: relative;
     margin-right: 1rem;
-   
 }
 
 .search-input {
@@ -137,7 +132,7 @@ body {
     top: 60%;
     transform: translateY(-50%);
     color: #9ca3af;
-    font-size:medium;
+    font-size: medium;
 }
 
 .login-button {
@@ -151,12 +146,118 @@ body {
     margin-bottom: -3%;
 }
 
-/* about us header and paragraph */
-#container1 {
+/* Adoption Process page styles */
+.adoption-process-main {
+    padding: 2rem 0;
+}
+
+.adoption-process-main h1 {
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    width: 60%;
+}
+
+.intro-image {
+    width: 35%;
+    height: 200px;
+    background-color: #e5e7eb;
+}
+
+.cta-button, .adopt-button {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+}
+
+.eligibility-requirements, .adoption-fees, .adoption-steps {
+    margin-bottom: 2rem;
+}
+
+.eligibility-requirements ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.step-dropdown {
+    margin-bottom: 1rem;
+}
+
+.step-dropdown h3 {
+    background-color: #f2f2f2;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.step-content {
+    display: none;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+.image-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.image-placeholder1 {
+    width: 40%;
+    height: 400px;
+    background-color: #e5e7eb;
+}
+
+.image-placeholder2 {
+    width: 40%;
+    height: 400px;
+    background-color: #e5e7eb;
 }
 
 
+
+.ready-to-adopt {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.adopt-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 9rem;
+}
+
+.adopt-button {
+    width: 20%;
+    bottom: 30%;
+}
 
 
 /* Newsletter signup styles */
@@ -193,4 +294,40 @@ body {
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-and-actions {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-menu {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .intro-section, .image-section {
+        flex-direction: column;
+    }
+
+    .intro-text, .intro-image, .image-placeholder {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .adopt-buttons {
+        flex-direction: column;
+    }
 }
