@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -67,6 +66,7 @@ body {
     display: flex;
     margin-right: 2rem;
     font-size: large;
+    margin-top: -2.3%;
 }
 
 .nav-list {
@@ -163,52 +163,78 @@ body {
 
 
 
-/* success Stories styles */
-.success-stories-main {
+/* Locations page styles */
+.locations-main {
     padding: 2rem 0;
 }
 
-.success-stories-main h1 {
+.locations-main h1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
 }
 
-.success-stories-main h2 {
+.locations-main h2 {
     font-size: 1.5rem;
     text-align: center;
-    color: white;
+    color: #666;
     margin-bottom: 2rem;
 }
 
-.success-stories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.our-centers {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.map-placeholder {
+    width: 50%;
+    height: 300px;
+    background-color: #e5e7eb;
+}
+
+.centers-info {
+    width: 50%;
+    padding-left: 2rem;
+}
+
+.centers-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
-.success-story {
+.location {
     background-color: #fff;
+    padding: 1.5rem;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.story-image {
-    height: 200px;
-    background-color: #e5e7eb;
-    background-size: cover;
-    background-position: center;
+.location-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.success-story p {
-    padding: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
+.location h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: "Times New Roman", Times, serif;
 }
 
+.location p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
 
-
+.location address {
+    font-style: normal;
+    line-height: 1.6;
+}
 
 /* Newsletter signup styles */
 .newsletter-signup {
@@ -219,9 +245,12 @@ body {
     margin-bottom: -10%;
 }
 
+
+/* stay in touch bottom text */
 .newsletter-signup h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color:white;
 }
 
 .signup-form {
@@ -250,30 +279,3 @@ body {
 
 
 
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-and-actions {
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .nav-menu {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-
-    .header-actions {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .success-stories-grid {
-        grid-template-columns: 1fr;
-    }
-}
