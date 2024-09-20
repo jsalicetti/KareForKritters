@@ -61,12 +61,13 @@ body {
 
 
 
+
+
 /* nav menu styles */
 .nav-menu {
     display: flex;
     margin-right: 2rem;
     font-size: large;
-    margin-top: -2.3%;
 }
 
 .nav-list {
@@ -195,6 +196,7 @@ body {
 .centers-info {
     width: 50%;
     padding-left: 2rem;
+    font-size: x;
 }
 
 .centers-info h3 {
@@ -213,6 +215,7 @@ body {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
 }
 
 .location-icon {
