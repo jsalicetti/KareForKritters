@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locations - Kare for Kritters</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <div class="page-container">
         <!-- header with navbar -->
         <header class="header">
             <div class="container header-content">
-                <!-- logo and title -->
                 <a href="/" class="logo">
                     <div class="logo-image"></div>
                     <span class="site-title">KARE FOR KRITTERS</span>
                 </a>
                 
                 <div class="nav-and-actions">
-                    <!-- nav menu -->
                     <nav class="nav-menu">
                         <ul class="nav-list">
-                            <!-- adopt dropdown -->
                             <li class="nav-item">
                                 <a href="#" class="nav-link">ADOPT</a>
                                 <br><br>
@@ -31,10 +29,7 @@
                                     <li><a href="/adoption-application">ADOPTION APPLICATION</a></li>
                                 </ul>
                             </li>
-                            <br>
-                            <br>
-
-                            <!-- who we are dropdown -->
+                            <br><br>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">WHO WE ARE</a>
                                 <br><br>
@@ -43,7 +38,6 @@
                                     <li><a href="/locations">LOCATIONS</a></li>
                                 </ul>
                             </li>
-                            <!-- get involved dropdown -->
                             <li class="nav-item">
                                 <a href="#" class="nav-link">GET INVOLVED</a>
                                 <br><br>
@@ -51,7 +45,6 @@
                                     <li><a href="/donate">DONATE</a></li>
                                 </ul>
                             </li>
-                            <!-- resources dropdown -->
                             <li class="nav-item">
                                 <a href="#" class="nav-link">RESOURCES</a>
                                 <br><br>
@@ -64,7 +57,6 @@
                         </ul>
                     </nav>
                     
-                    <!-- login and search -->
                     <div class="header-actions">
                         <div class="search-container">
                             <input type="search" placeholder="Search..." class="search-input">
@@ -82,12 +74,10 @@
                 <h1>LOCATIONS</h1> </strong>
                 <h2>VISIT OUR FACILITY</h2>
 
-                    <br>
-                    <br>
-                    
+                <br><br>
                 
                 <div class="our-centers">
-                    <div class="map-placeholder"></div>
+                    <div id="map"></div> <!-- Map placeholder -->
                     <div class="centers-info">
                         <strong>
                         <h3>OUR CENTERS</h3> </strong>
@@ -95,10 +85,7 @@
                     </div>
                 </div>
 
-                <br>
-                <br>
-                <br>
-                <br>
+                <br><br><br><br>
 
                 <div class="location-details">
                     <div class="location">
@@ -107,9 +94,9 @@
                         <p>In The Bronx, we offer a full-service animal shelter experience, including adoptions, surrenders and volunteers. We host adoption and fundraising events and offer a full range of services including spay/neuter and Animal Care Centers of NYC.</p> <br>
                         <address>
                         <strong>
-                            464 East 176th<br>
-                            Bronx, NY 10457<br>
-                            718-991-6400
+                            804 East 138th Street<br>
+                            Bronx, NY 10454<br>
+                            718-991-8400
                         </strong>
                         </address>
                     </div>
@@ -119,23 +106,16 @@
                         <p>In Brooklyn, we provide a range of critically needed resources and services for the cats and dogs. On-site cat and dog adoptions, surrenders, a pet food pantry, spay/neuter clinic along with a pet food and supplies pantry, free medical care/vaccinations, foster care, and a meeting space for foster caregivers, volunteers and adopters.</p> <br>
                         <address>
                             <strong>
-                            76 Hanson Place<br>
-                            Brooklyn, NY 11217<br>
-                            718-486-9400
+                            630 Flushing Avenue<br>
+                            Brooklyn, NY 11206<br>
+                            718-991-8400
                         </strong>
                         </address>
                     </div>
                 </div>
             </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br><br><br><br>
 
             <!-- Newsletter signup -->
             <section class="newsletter-signup">
@@ -150,6 +130,38 @@
             </section>
         </main>
 
-    
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-j7sNJLIWzKCbRMJlm98bfL3-JKCLjBM&callback=initMap" async defer></script>
+        <script>
+            function initMap() {
+                // locations
+                var location1 = {lat: 40.80351946851118, lng: -73.91050854513445}; // Bronx PS
+                var location2 = {lat: 40.699700432698435, lng: -73.94858279687112}; // Brooklyn PS
+
+                // Create the map centered between the two locations
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 11.5,
+                    center: {lat: (location1.lat + location2.lat) / 2, lng: (location1.lng + location2.lng) / 2}
+                });
+
+                // Add markers for each location
+                var marker1 = new google.maps.Marker({
+                    position: location1,
+                    map: map,
+                    title: 'Per Scholas Building'
+                });
+
+                var marker2 = new google.maps.Marker({
+                    position: location2,
+                    map: map,
+                    title: 'Brooklyn Location'
+                });
+            }
+        </script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-j7sNJLIWzKCbRMJlm98bfL3-JKCLjBM&callback=initMap">
+</script>
+
+    </div>
 </body>
 </html>

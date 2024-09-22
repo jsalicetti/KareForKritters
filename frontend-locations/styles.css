@@ -44,7 +44,7 @@ body {
     height: 2.5rem;
     background-color: #e5e7eb;
     border-radius: 50%;
-    margin-right: 0.5rem;
+    margin-right: 1.5rem;
 }
 
 .site-title {
@@ -165,12 +165,17 @@ body {
 
 
 /* Locations page styles */
-.locations-main {
-    padding: 2rem 0;
+#map {
+    height: 400px; /* Set height */
+    width: 100%; /* Set width */
+    border: 2px solid #333; /* Dark border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 20px 0; /* Space above and below */
 }
 
 .locations-main h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
 }
@@ -178,7 +183,7 @@ body {
 .locations-main h2 {
     font-size: 1.3rem;
     text-align: center;
-    color: #666;
+    color: #ffffff;
     margin-bottom: 2rem;
 }
 

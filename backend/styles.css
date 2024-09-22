@@ -1,0 +1,8 @@
+#map {
+    height: 400px; /* Set height */
+    width: 100%; /* Set width */
+    border: 2px solid #333; /* Dark border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 20px 0; /* Space above and below */
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Integration</title>
+    <style>
+        /* Set the size of the map */
+        #map {
+            height: 400px; /* Set height */
+            width: 100%; /* Set width */
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Locations</h1>
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-j7sNJLIWzKCbRMJlm98bfL3-JKCLjBM&callback=initMap" async defer></script>
+<script>
+    function initMap() {
+        // locations
+        var location1 = {lat: 40.80351946851118,  lng: -73.91050854513445}; // Bronx PS
+        var location2 = {lat: 40.699700432698435, lng: -73.94858279687112}; // SBrooklyn PS
+
+        // Create the map centered between the two locations
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11.5,
+            center: {lat: (location1.lat + location2.lat) / 2, lng: (location1.lng + location2.lng) / 2}
+        });
+
+        // Add markers for each location
+        var marker1 = new google.maps.Marker({
+            position: location1,
+            map: map,
+            title: 'Per Scholas Building'
+        });
+
+        var marker2 = new google.maps.Marker({
+            position: location2,
+            map: map,
+            title: 'Second Location'
+        });
+    }
+</script>
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-j7sNJLIWzKCbRMJlm98bfL3-JKCLjBM&callback=initMap">
+</script>
+</body>
+</html>
