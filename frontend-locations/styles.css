@@ -166,8 +166,8 @@ body {
 
 /* Locations page styles */
 #map {
-    height: 400px; /* Set height */
-    width: 100%; /* Set width */
+    height: 600px; /* Set height */
+    width: 300%; /* Set width */
     border: 2px solid #333; /* Dark border */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
@@ -191,6 +191,7 @@ body {
     display: flex;
     margin-bottom: 2rem;
     font-size: xx-large;
+    
 }
 
 .map-placeholder {
@@ -203,11 +204,21 @@ body {
     width: 50%;
     padding-left: 2rem;
     font-size: x-large;
+    text-align: center;
 }
 
 .centers-info h3 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    margin-right: -125%;
+    color: white;
+}
+
+.centers-info p {
+    margin-right: -125%;
+    font-size: xx-large;
+    text-align: center;
+    line-height: 2;
 }
 
 .location-details {
@@ -250,7 +261,8 @@ font-family: Arial, Helvetica, sans-serif;
 
 .location p {
     margin-bottom: 1rem;
-    line-height: 1.6;
+    line-height: 1.4;
+    font-size: x-large;
 }
 
 .location address {
