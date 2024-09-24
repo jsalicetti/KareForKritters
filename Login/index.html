@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kare for Kritters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header with navbar -->
+        <header class="header">
+            <div class="container header-content">
+                <!-- Logo and site title -->
+                <a href="/" class="logo">
+                    <div class="logo-image"></div>
+                    <span class="site-title">KARE FOR KRITTERS</span>
+                </a>
+                
+                <div class="nav-and-actions">
+                    <!-- Navigation menu -->
+                    <nav class="nav-menu">
+                        <ul class="nav-list">
+                            <!-- Adopt dropdown -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">ADOPT</a>
+                                <br><br>
+                                <ul class="dropdown">
+                                    <li><a href="/adoption-process">ADOPTION PROCESS & FEES</a></li>
+                                    <li><a href="/adoptables">VIEW ALL ADOPTABLES</a></li>
+                                    <li><a href="/adoption-application">ADOPTION APPLICATION</a></li>
+                                </ul>
+                            </li>
+                            <br><br>
+                            <!-- Who We Are dropdown -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">WHO WE ARE</a>
+                                <br><br>
+                                <ul class="dropdown">
+                                    <li><a href="/success-stories">SUCCESS STORIES</a></li>
+                                    <li><a href="/locations">LOCATIONS</a></li>
+                                </ul>
+                            </li>
+                            <!-- Get Involved dropdown -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">GET INVOLVED</a>
+                                <br><br>
+                                <ul class="dropdown">
+                                    <li><a href="/donate">DONATE</a></li>
+                                </ul>
+                            </li>
+                            <!-- Resources dropdown -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">RESOURCES</a>
+                                <br><br>
+                                <ul class="dropdown">
+                                    <li><a href="/pet-training">PET TRAINING</a></li>
+                                    <li><a href="/health-tips">HEALTH TIPS</a></li>
+                                    <li><a href="/pet-insurance">PET INSURANCE</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <!-- Search and login buttons -->
+                    <div class="header-actions">
+                        <div class="search-container">
+                            <input type="search" placeholder="Search..." class="search-input">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                        <button class="login-button">LOGIN</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="login-main">
+            <!-- Login and Registration forms container -->
+            <div class="login-container">
+                <!-- Login form -->
+                <h2>Login</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email or Username</label>
+                        <input type="text" id="login-email" name="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="login-password" required>
+                    </div>
+                    <button type="submit" class="form-submit">Sign In</button>
+                </form>
+
+                <hr style="margin: 2rem 0;">
+
+                <!-- Registration form -->
+                <h2>Register</h2>
+                <form class="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" name="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" name="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" name="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="form-submit">Register</button>
+                </form>
+            </div>
+
+            <!-- Newsletter signup section -->
+            <section class="newsletter-signup">
+                <div class="container1">
+                    <h2>Stay in touch!</h2>
+                    <p>Keep up to date with our little kritters</p>
+                    <form class="signup-form">
+                        <input type="email" placeholder="Email Address" class="email-input">
+                        <button type="submit" class="submit-button">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

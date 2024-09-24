@@ -39,6 +39,7 @@ body {
     color: #fff;
     margin-left: -50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .logo-image {
@@ -164,7 +165,7 @@ body {
 .hero-background {
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 33%;
     width: 450%;
     height: 500%;
     background-position: center;
