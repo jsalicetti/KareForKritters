@@ -1,4 +1,4 @@
-const Locationpage = () => {
+const Locationmappage = () => {
 
     return(
         <>
@@ -326,4 +326,4 @@ const Locationpage = () => {
         </>
     )
 }
-export default Locationpage;
+export default Locationmappage;
