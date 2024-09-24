@@ -169,8 +169,8 @@ const Homepage = () => {
                     <h2>Stay in touch!</h2>
                     <p>Keep up to date with our little kritters</p>
                     <form className="signup-form">
-                        <input type="email" placeholder="Email Address" class="email-input"/>
-                        <button type="submit" class="submit-button">Subscribe  </button>
+                        <input type="email" placeholder="Email Address" className="email-input"/>
+                        <button type="submit" className="submit-button">Subscribe  </button>
                     </form>
                 </div>
             </section>

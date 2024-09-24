@@ -1,4 +1,25 @@
+import React, { useEffect } from 'react';
+
 const Adoptionprocesspage = () => {
+
+    useEffect(() => {
+        const handleDropdownClick = (event) => {
+            const content = event.target.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        };
+
+        const dropdowns = document.querySelectorAll('.step-dropdown h3');
+        dropdowns.forEach(item => {
+            item.addEventListener('click', handleDropdownClick);
+        });
+
+        
+        return () => {
+            dropdowns.forEach(item => {
+                item.removeEventListener('click', handleDropdownClick);
+            });
+        };
+    }, []); 
 
     return(
         <>
@@ -19,8 +40,8 @@ const Adoptionprocesspage = () => {
                         <ul className="nav-list">
                             {/* <!-- adopt dropdown --> */}
                             <li className="nav-item">
-                                <a href="#" class="nav-link">ADOPT</a>
-                                <ul class="dropdown">
+                                <a href="#" className="nav-link">ADOPT</a>
+                                <ul className="dropdown">
                                     <li><a href="/adoption-process">ADOPTION PROCESS & FEES</a></li>
                                     <li><a href="/adoptables">VIEW ALL ADOPTABLES</a></li>
                                     <li><a href="/adoption-application">ADOPTION APPLICATION</a></li>
@@ -36,7 +57,7 @@ const Adoptionprocesspage = () => {
                                 </ul>
                             </li>
                             {/* <!-- get involved dropdown --> */}
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <a href="#" className="nav-link">GET INVOLVED</a>
                                 <ul className="dropdown">
                                     <li><a href="/donate">DONATE</a></li>
@@ -107,6 +128,7 @@ const Adoptionprocesspage = () => {
                 <section className="adoption-fees">
                     <h2>Adoption Fees</h2>
                     <table>
+                        <tbody>
                         <tr>
                             <th>Pet Type</th>
                             <th>Fee</th>
@@ -127,6 +149,7 @@ const Adoptionprocesspage = () => {
                             <td>Kittens (under 6 months)</td>
                             <td>$150</td>
                         </tr>
+                    </tbody>
                     </table>
                 </section>
                 <br></br>
@@ -196,17 +219,7 @@ const Adoptionprocesspage = () => {
         </main>
     </div>
 
-    <script>
-        // JavaScript for dropdown functionality
-        document.querySelectorAll('.step-dropdown h3').forEach(item ={">"} {
-            item.addEventListener('click', event => {
-                const content = event.target.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            })};
-);
-    </script>
-        
-        </>
+    </>
     )
 }
 

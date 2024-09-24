@@ -1,3 +1,5 @@
+import "../style_components/Loginpage2.css"
+
 const Loginpage = () => {
 
     return(
@@ -77,14 +79,14 @@ const Loginpage = () => {
                 <h2>Login</h2>
                 <form className="login-form">
                     <div className="form-group">
-                        <label for="login-email">Email or Username</label>
+                        <label htmlFor="login-email">Email or Username</label>
                         <input type="text" id="login-email" name="login-email" required></input>
                     </div>
                     <div className="form-group">
-                        <label for="login-password">Password</label>
+                        <label htmlFor="login-password">Password</label>
                         <input type="password" id="login-password" name="login-password" required></input>
                     </div>
-                    <button type="submit" class="form-submit">Sign In</button>
+                    <button type="submit" className="form-submit">Sign In</button>
                 </form>
 
                 <hr style={{margin: "2rem 0"}}></hr>
@@ -93,22 +95,22 @@ const Loginpage = () => {
                 <h2>Register</h2>
                 <form className="register-form">
                     <div className="form-group">
-                        <label for="register-name">Full Name</label>
+                        <label htmlFor="register-name">Full Name</label>
                         <input type="text" id="register-name" name="register-name" required></input>
                     </div>
                     <div className="form-group">
-                        <label for="register-email">Email</label>
+                        <label htmlFor="register-email">Email</label>
                         <input type="email" id="register-email" name="register-email" required></input>
                     </div>
                     <div className="form-group">
-                        <label for="register-password">Password</label>
+                        <label htmlFor="register-password">Password</label>
                         <input type="password" id="register-password" name="register-password" required></input>
                     </div>
                     <div className="form-group">
-                        <label for="register-confirm-password">Confirm Password</label>
+                        <label htmlFor="register-confirm-password">Confirm Password</label>
                         <input type="password" id="register-confirm-password" name="register-confirm-password" required></input>
                     </div>
-                    <button type="submit" class="form-submit">Register</button>
+                    <button type="submit" className="form-submit">Register</button>
                 </form>
             </div>
 

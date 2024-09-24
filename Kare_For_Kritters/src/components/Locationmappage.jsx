@@ -139,7 +139,15 @@ const Locationmappage = () => {
                     <br></br>
                         
                         <div className="training-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jFMA5ggFsXU?si=1Jo5AEGFb5XCyeJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe 
+                        width="560" height="315" 
+                        src="https://www.youtube.com/embed/jFMA5ggFsXU?si=1Jo5AEGFb5XCyeJM" 
+                        title="YouTube video player" 
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerPolicy="strict-origin-when-cross-origin" 
+                        allowFullScreen>
+                        </iframe>
                     </div>
                     <br></br>
                     <br></br>
@@ -235,7 +243,15 @@ const Locationmappage = () => {
                     <div className="video-container">
                         <div className="nail-cutting-video">
                             
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/o_YxH7h2dws?si=fZEQCObQJm9Iqfm1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe 
+                                width="560" height="315" 
+                                src="https://www.youtube.com/embed/o_YxH7h2dws?si=fZEQCObQJm9Iqfm1" 
+                                title="YouTube video player" 
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerPolicy="strict-origin-when-cross-origin" 
+                                allowFullScreen>
+                            </iframe>
 
                         </div>
                      <br></br>
@@ -245,7 +261,15 @@ const Locationmappage = () => {
                 
                         <div className="pet-proofing">
 
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/AZr97y1b9f0?si=dLuumJM9Uk-v4gBO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe 
+                                width="560" height="315" 
+                                src="https://www.youtube.com/embed/AZr97y1b9f0?si=dLuumJM9Uk-v4gBO" 
+                                title="YouTube video player" 
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerPolicy="strict-origin-when-cross-origin" 
+                                allowFullScreen>
+                            </iframe>
 
                         </div>
                     </div>
@@ -257,7 +281,7 @@ const Locationmappage = () => {
                 <br></br>
                 <br></br>
                 {/* <!-- Pet Insurance Section --> */}
-                <div class="resource-section" id="insurance">
+                <div className="resource-section" id="insurance">
                     <h2>PET INSURANCE</h2>
                     <br></br>
                     <br></br>
