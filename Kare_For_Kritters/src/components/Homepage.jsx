@@ -1,4 +1,4 @@
-
+import "../style_components/Homepage2.css";
 const Homepage = () => {
 
     return(

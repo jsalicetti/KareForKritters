@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import "../style_components/Adoptionprocesspage2.css";
 
 const Adoptionprocesspage = () => {
 
-    useEffect(() => {
-        const handleDropdownClick = (event) => {
-            const content = event.target.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        };
-
-        const dropdowns = document.querySelectorAll('.step-dropdown h3');
-        dropdowns.forEach(item => {
-            item.addEventListener('click', handleDropdownClick);
-        });
-
-        
-        return () => {
-            dropdowns.forEach(item => {
-                item.removeEventListener('click', handleDropdownClick);
-            });
-        };
-    }, []); 
+    const handleDropdownClick = (event) => {
+        const content = event.target.closest('.step-dropdown').querySelector('.step-content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    };
 
     return(
         <>
@@ -159,25 +146,25 @@ const Adoptionprocesspage = () => {
                 <section className="adoption-steps">
                     <h2>Adoption Steps</h2>
                     <div className="step-dropdown">
-                        <h3>Step 1: Browse Available Pets</h3>
+                        <h3 onClick={handleDropdownClick}>Step 1: Browse Available Pets</h3>
                         <div className="step-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                     <div className="step-dropdown">
-                        <h3>Step 2: Submit an Application</h3>
+                        <h3 onClick={handleDropdownClick}>Step 2: Submit an Application</h3>
                         <div className="step-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                     <div className="step-dropdown">
-                        <h3>Step 3: Meet Your Potential Pet</h3>
+                        <h3 onClick={handleDropdownClick}>Step 3: Meet Your Potential Pet</h3>
                         <div className="step-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                     <div className="step-dropdown">
-                        <h3>Step 4: Finalize the Adoption</h3>
+                        <h3 onClick={handleDropdownClick}>Step 4: Finalize the Adoption</h3>
                         <div className="step-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
