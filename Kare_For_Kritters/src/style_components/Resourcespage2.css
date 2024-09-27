@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
 }
 
 
-/* color option for body - save for later - #6187d197 */
+/* color option for body - save for later - #6187d197 
 
 .container {
     max-width: 1200px;
@@ -15,7 +15,7 @@ body {
     padding: 0 1rem;
 }
 
-/* header styles */
+/* header styles 
 .header {
     background-color: #000;
     position: sticky;
@@ -60,7 +60,7 @@ body {
     align-items: center;
 }
 
-/* nav menu styles */
+/* nav menu styles 
 .nav-menu {
     display: flex;
     margin-right: 2rem;
@@ -115,7 +115,7 @@ body {
     background-color:#4a98ea;
 }
 
-/* header actions styles */
+/* header actions styles 
 .header-actions {
     display: flex;
     align-items: center;
@@ -153,7 +153,7 @@ body {
 
 
 
-/* Header styles */
+/* Header styles 
 .header {
     background-color: #000;
     position: sticky;
@@ -186,7 +186,7 @@ body {
 
 
 
-/* training tips */
+/* training tips 
 
 .resource-section {
     margin-left: -24%;
@@ -267,7 +267,7 @@ body {
 }
 
 
-/* health tips */
+/* health tips 
 
 
 .resource-section h2 {
@@ -317,14 +317,14 @@ body {
 
 
 
-/* youtube links */
+/* youtube links 
 
 
-/*training video */
+/*training video 
 .training-video {
     position: relative;
     width: 100%;
-    max-width: 560px; /* Match the width of the iframe */
+    max-width: 560px; /* Match the width of the iframe 
     margin-left: auto;
     margin-right: 30%;
 }
@@ -335,7 +335,7 @@ body {
 }
 
 
-/* grooming video */
+/* grooming video 
 .pet-proofing {
 position: relative;
 width: 100%;
@@ -354,7 +354,7 @@ margin-top: -32.5%;
 
   
     
-/* Newsletter signup styles */
+/* Newsletter signup styles 
 .newsletter-signup {
     background-color: #000;
     color: #fff;
@@ -367,7 +367,7 @@ margin-top: -32.5%;
 }
 
 .newsletter-signup .container {
-    max-width: 1200px; /* or whatever max-width you prefer */
+    max-width: 1200px; /* or whatever max-width you prefer 
     margin: 0 auto;
     padding: 0 1rem;
     margin-right: 25.5%;

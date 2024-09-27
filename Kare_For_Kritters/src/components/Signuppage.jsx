@@ -2,27 +2,31 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/solid'
 
-const Loginpage = () => {
-  const [username, setUsername] = useState('')
+const SignupPage = () => {
+  const [UserName, setUserName] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [userData, setUserData] = useState(null)
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState(null)
   const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if (password !== confirmPassword) {
+      setError("Passwords don't match")
+      return
+    }
     try {
-      console.log('Sending request with:', { username, password })
-      const response = await fetch('http://localhost:8081/api/Login', {
+      console.log('Sending request with:', { UserName, email, password })
+      const response = await fetch('http://localhost:8081/register', {
         method: 'POST',
+        body: JSON.stringify({ UserName, email, password }),
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username: username, password: password }),
+            'Content-Type': 'application/json',
+          },
       })
       if (response.status === 200) {
-        localStorage.setItem('username', username)
-        navigate('/userprofile')
+        navigate('/login')
       }
 
       if (!response.ok) {
@@ -30,13 +34,10 @@ const Loginpage = () => {
         throw new Error(errorData.message || 'Network response was not ok')
       }
 
-      const data = await response.json()
-      setUserData(data)
       setError(null)
     } catch (error) {
-      console.error('Error during login:', error)
-      setError(error.message || 'Login failed. Please check your username and password.')
-      setUserData(null)
+      console.error('Error during signup:', error)
+      setError(error.message || 'Signup failed. Please try again.')
     }
   }
 
@@ -72,7 +73,6 @@ const Loginpage = () => {
       ]
     }
   ]
-
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-400 to-blue-200 text-gray-800 font-sans">
@@ -115,21 +115,32 @@ const Loginpage = () => {
         <br></br> <br></br> <br></br> <br></br>
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-8">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">Login</h2>
+            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">Sign Up / Register</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
+                <label htmlFor="UserName" className="block text-sm font-medium text-gray-700">Name</label>
                 <input
                   type="text"
-                  id="username"
-                  name="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  id="name"
+                  name="UserName"
+                  value={UserName}
+                  onChange={(e) => setUserName(e.target.value)}
                   required
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                 />
               </div>
-              <br></br>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                 <input
@@ -142,18 +153,28 @@ const Loginpage = () => {
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                 />
               </div>
-              <br></br>
+              <div>
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
               <div>
                 <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-                  Sign In
+                  Sign Up
                 </button>
               </div>
-              
             </form>
             {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
           </div>
           <div className="px-8 py-6 bg-gray-50 border-t border-gray-200">
-            <p className="text-xs text-gray-600 text-center">Don't have an account? <a href="#" className="font-medium text-orange-600 hover:text-orange-500">Sign up</a></p>
+            <p className="text-xs text-gray-600 text-center">Already have an account? <a href="/login" className="font-medium text-orange-600 hover:text-orange-500">Log in</a></p>
           </div>
         </div>
       </main>
@@ -191,4 +212,4 @@ const Loginpage = () => {
   )
 }
 
-export default Loginpage
+export default SignupPage

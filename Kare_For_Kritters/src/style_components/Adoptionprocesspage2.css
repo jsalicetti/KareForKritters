@@ -1,8 +1,8 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed */
+    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed 
 }
 
 .container {
@@ -11,7 +11,7 @@ body {
     padding: 0 1rem;
 }
 
-/* Header styles (unchanged) */
+/* Header styles (unchanged) 
 .header {
     background-color: #000;
     position: sticky;
@@ -146,7 +146,7 @@ body {
     margin-bottom: -3%;
 }
 
-/* Adoption Process page styles */
+/* Adoption Process page styles 
 .adoption-process-main {
     padding: 2rem 0;
 }
@@ -266,7 +266,7 @@ th {
 }
 
 
-/* Newsletter signup styles */
+/* Newsletter signup styles 
 .newsletter-signup {
     background-color: #000;
     color: #fff;
@@ -302,7 +302,7 @@ th {
     cursor: pointer;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments 
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;

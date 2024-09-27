@@ -1,184 +1,242 @@
-import "../style_components/Homepage2.css";
+import React, { useState, useEffect } from 'react'
+import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon, PhotoIcon, InformationCircleIcon, MegaphoneIcon, XCircleIcon, } from '@heroicons/react/24/solid'
+
 const Homepage = () => {
+  const [activeTab, setActiveTab] = useState({})
+  const [adoptionCount, setAdoptionCount] = useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    return(
-        <>
-        <div className="page-container">
-        {/* <!-- header with navbar --> */}
-        <header className="header">
-            <div className="container header-content">
-                {/* <!-- logo and title --> */}
-                <a href="/" className="logo">
-                    <div className="logo-image"></div>
-                    <span className="site-title">KARE FOR KRITTERS</span>
+  const toggleTab = (index, tab) => {
+    setActiveTab(prev => ({
+      ...prev,
+      [index]: tab
+    }))
+  }
+  
+
+  const petStories = [
+    { 
+      name: 'Fluffington', 
+      nickname: "Who doesn't have a nickname yet!", 
+      image: '/Images-React/fluffington.jpg',
+      info: "Fluffington, a majestic Maine Coon, was rescued from a hoarding situation. Now, he's living his best life in a loving home, enjoying sunny spots and gourmet cat food."
+    },
+    { 
+      name: 'Bagel', 
+      nickname: 'Otherwise known as Cream Cheese!', 
+      image: '/Images-React/bagel.jpg',
+      info: "Bagel, a chubby tabby, was found in a dumpster behind a bakery. His new family couldn't resist his round shape and named him after their favorite breakfast treat."
+    },
+    { 
+      name: 'Kage', 
+      nickname: 'Otherwise known as Ro-meow Santos!', 
+      image: '/Images-React/Kage.jpg',
+      info: "Kage, a sleek black cat, was a stray living in a parking garage. He now rules his new home like a shadow king, earning his nickname from his stealthy antics."
+    },
+  ]
+
+  const navItems = [
+    { 
+      name: 'ADOPT', 
+      items: [
+        { name: 'View All Pets', link: '/pets' },
+        { name: 'Adoption Process', link: '/adoption-process' },
+        { name: 'Adoption Application', link: '/adoption-application' }
+      ]
+    },
+    { 
+      name: 'WHO WE ARE', 
+      items: [
+        { name: 'About Us', link: '/about' },
+        { name: 'Success Stories', link: '/success' },
+        { name: 'Locations', link: '/location' }
+      ]
+    },
+    { 
+      name: 'GET INVOLVED', 
+      items: [
+        { name: 'Submenu Item 1', link: '/get-involved' }
+      ]
+    },
+    { 
+      name: 'RESOURCES', 
+      items: [
+        { name: 'Pet Training', link: '/resources#pet-training' },
+        { name: 'Health Tips', link: '/resources#health-tips' },
+        { name: 'Pet Insurance', link: '/resources#pet-insurance' }
+      ]
+    }
+  ]
+
+  return (
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-400 to-blue-200 text-gray-800 font-sans">
+      <header className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-4 sticky top-0 z-50 shadow-lg">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <a href="/" className="flex items-center text-2xl font-bold">
+            <HeartIcon className="w-8 h-8 mr-2" />
+            <span>KARE FOR KRITTERS</span>
+          </a>
+          <nav className="hidden md:flex space-x-6">
+            {navItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <a href="#" className="flex items-center hover:text-orange-200 transition duration-300">
+                  {item.name}
+                  <ChevronDownIcon className="w-4 h-4 ml-1" />
                 </a>
-                
-                <div className="nav-and-actions">
-                    {/* <!-- nav menu --> */}
-                    <nav className="nav-menu">
-                        <ul className="nav-list">
-                            {/* <!-- adopt dropdown --> */}
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">ADOPT</a>
-                                <br></br>
-                                <ul className="dropdown">
-                                    <li><a href="/adoption-process">ADOPTION PROCESS & FEES</a></li>
-                                    <li><a href="/adoptables">VIEW ALL ADOPTABLES</a></li>
-                                    <li><a href="/adoption-application">ADOPTION APPLICATION</a></li>
-                                </ul>
-                            </li>
-                            <br />
-                            <br />
-
-                            {/* <!-- who we are dropdown --> */}
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">WHO WE ARE</a>
-                                <br></br>
-                                <ul className="dropdown">
-                                    <li><a href="/success-stories">SUCCESS STORIES</a></li>
-                                    <li><a href="/locations">LOCATIONS</a></li>
-                                </ul>
-                            </li>
-                            {/* <!-- get involved dropdown --> */}
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">GET INVOLVED</a>
-                                <br></br>
-                                <ul className="dropdown">
-                                    <li><a href="/donate">DONATE</a></li>
-                                </ul>
-                            </li>
-                            {/* <!-- resources dropdown --> */}
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">RESOURCES</a>
-                                <br></br>
-                                <ul className="dropdown">
-                                    <li><a href="/pet-training">PET TRAINING</a></li>
-                                    <li><a href="/health-tips">HEALTH TIPS</a></li>
-                                    <li><a href="/pet-insurance">PET INSURANCE</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    
-                    {/* <!-- login and search --> */}
-                    <div className="header-actions">
-                        <div className="search-container">
-                            <input type="search" placeholder="Search..." className="search-input" />
-                            <span className="search-icon">🔍</span>
-                        </div>
-                        <button className="login-button">LOGIN</button>
-                    </div>
-                </div>
+                <ul className="absolute hidden group-hover:block bg-white text-gray-800 min-w-[200px] shadow-lg rounded-md overflow-hidden">
+                  {item.items.map((subItem) => (
+                    <li key={subItem.name}>
+                      <a href={subItem.link} className="block px-4 py-2 hover:bg-orange-100 transition duration-300">
+                        {subItem.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+          <div className="flex items-center">
+            <div className="relative mr-4 hidden md:block">
+              <input type="search" placeholder="Search..." className="py-1 px-3 pr-8 rounded-full bg-orange-500 text-white placeholder-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-300" />
+              <MagnifyingGlassIcon className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-orange-200" />
             </div>
-        </header>
-
-        
-        <main className="main-content">
-            {/* <!-- hero banner section --> */}
-            <section className="hero-banner">
-                {/* <!-- This div will hold the background image --> */}
-                <div className="hero-background">
-                    <img src="https://images.prismic.io/trustedhousesitters/b45c2273-bd43-4f35-b31f-e417ac0156ae_hunting+dog+names+1.png?auto=compress,format&rect=0,0,1920,800&w=960&h=400" alt="dogimage" />
-                </div>
-                {/* <!-- This div contains the hero content --> */}
-                <div className="hero-content">
-                    <p className="hero-quote">Saving one animal won't change the world, but it will change the world for that one animal.</p>
-                </div>
-            </section>
-            <br />
-            <br />
-            <br />
-            <br />
-
-            <div className="container">
-                {/* <!-- Donation section --> */}
-                <section className="donation-section">
-                    <div className="donation-items">
-                        <div className="donation-item">
-                            <div className="image-placeholder1">
-                                <img src="/images/dogdonate.jpg" alt="Dog Image" width="256" height="256" />
-                            </div>
-                            <button className="donation-button1">Monthly donations</button>
-                        </div>
-                        <br />
-                       
-
-                        <div className="donation-item">
-                            <div className="image-placeholder2">
-                                <img src="/images/catdonate.jpg" alt="Cat Image" width="256" height="256" />
-                            </div>
-                            <button className="donation-button2">Donate</button>
-                        </div>
-                    </div>
-                </section>
-
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                {/* <!-- Mission statement --> */}
-                <section className="mission-statement">
-                    <p>With Kare for Kritters, you are working to save the lives of cats and dogs all across America, giving pets a second chance at happiness and a home.</p>
-                </section>
-
-                <br/><br/><br/>
-
-                {/* <!-- Happily ever afters section --> */}
-                <div className="happily-ever-afters">
-                    <h2>Happily ever afters</h2>
-                    <br/>
-                    <br/>
-                    <div className="pet-stories">
-                        <div className="pet-story1">
-                            <div className="image-placeholder3">
-                                <img src="/images/fluffington.jpg" alt="Happy Pet 1" width="256" height="256"/>
-                            </div>
-                            <div className="text-placeholder3">
-                                <p>Meet Fluffington! <br/> Who doesn't have a <br/> nickname yet!</p>
-                            </div>
-                        </div>
-                        <br/><br/><br/><br/>
-                        <div className="pet-story2">
-                            <div className="image-placeholder4">
-                                <img src="/images/bagel.jpg" alt="Happy Pet 2" width="256" height="256"/>
-                            </div>
-                            <div className="text-placeholder4">
-                                
-                            <p>Meet Bagel! Otherwise known as Cream Cheese!</p> 
-                        </div>
-                        </div>
-                        <br/><br/><br/><br/>
-                        <div className="pet-story3">
-                            <div className="image-placeholder5">
-                                <img src="/images/Kage.jpg" alt="Happy Pet 3" width="256" height="256"/>
-                            </div>
-                            <div className="text-placeholder5">
-                                 <p>Meet Kage! <br/> Otherwise known as <br/> Ro-meow Santos!</p>
-                            </div>
-                        </div>
-                        <br/><br/><br/><br/>
-                    </div>
-                </div>
+            <button className="bg-white text-orange-600 px-4 py-1 rounded-full hover:bg-orange-100 transition duration-300 hidden md:block">LOGIN</button>
+            <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <XCircleIcon className="w-6 h-6" /> : <MegaphoneIcon className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 bg-orange-700 p-4">
+            <nav className="flex flex-col space-y-4">
+              {['ADOPT', 'WHO WE ARE', 'GET INVOLVED', 'RESOURCES'].map((item) => (
+                <a key={item} href="#" className="text-white hover:text-orange-200 transition duration-300">{item}</a>
+              ))}
+            </nav>
+            <div className="mt-4">
+              <input type="search" placeholder="Search..." className="w-full py-2 px-3 rounded-full bg-orange-500 text-white placeholder-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-300" />
             </div>
+            <button className="mt-4 w-full bg-white text-orange-600 px-4 py-2 rounded-full hover:bg-orange-100 transition duration-300">LOGIN</button>
+          </div>
+        )}
+      </header>
 
-            {/* <!-- Newsletter signup --> */}
-            <section className="newsletter-signup">
-                <div className="container">
-                    <h2>Stay in touch!</h2>
-                    <p>Keep up to date with our little kritters</p>
-                    <form className="signup-form">
-                        <input type="email" placeholder="Email Address" className="email-input"/>
-                        <button type="submit" className="submit-button">Subscribe  </button>
-                    </form>
+      <main>
+        <section className="relative h-[600px] overflow-hidden">
+          <img src="/Images-React/dogherobackground.avif?height=600&width=1920" alt="Hero Image" className="w-full h-full object-cover brightness-50" />
+          <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+            <div className="max-w-4xl mx-auto px-4">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Welcome to Kare for Kritters</h1>
+              <p className="text-xl md:text-2xl mb-8">
+                Saving one animal won't change the world, but it will change the world for that one animal.
+              </p>
+              <div className="flex items-center justify-center text-lg mb-8">
+                <HeartIcon className="w-8 h-8 text-red-400 mr-2 animate-pulse" />
+                <span className="text-2xl font-semibold">9 animals adopted this month</span>
+              </div>
+              <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+                Adopt Now
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div className="container mx-auto px-4">
+          <section className="flex flex-col md:flex-row justify-center gap-8 my-16">
+            <div className="text-center">
+              <img src="/Images-React/dogdonate.jpg" alt="Dog Donate" className="w-64 h-64 object-cover rounded-lg shadow-lg mb-4 transform hover:scale-105 transition duration-300" />
+              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">Interested in Dogs?</button>
+            </div>
+            <br></br> <br></br> <br></br> <br></br> 
+            <div className="text-center">
+              <img src="/Images-React/catdonate.jpg" alt="Cat Donate" className="w-64 h-64 object-cover rounded-lg shadow-lg mb-4 transform hover:scale-105 transition duration-300" />
+              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">Interested</button>
+            </div>
+          </section>
+
+          <section className="text-center my-16 bg-white py-16 rounded-lg shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-orange-600">Our Mission</h2>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto px-4">
+              With Kare for Kritters, you are working to save the lives of cats and dogs all across America, giving pets a second chance at happiness and a home.
+            </p>
+          </section>
+
+          <section className="my-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-orange-600">Happily Ever Afters</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+              {petStories.map((pet, index) => (
+                <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl">
+                  <div className="flex border-b border-gray-200">
+                    <button 
+                      className={`flex-1 py-2 px-4 flex items-center justify-center ${activeTab[index] !== 'info' ? 'bg-orange-100 font-semibold text-orange-600' : 'bg-white'}`}
+                      onClick={() => toggleTab(index, 'image')}
+                    >
+                      <PhotoIcon className="w-5 h-5 mr-2" />
+                      Nice to meet you!
+                    </button>
+                    <button 
+                      className={`flex-1 py-2 px-4 flex items-center justify-center ${activeTab[index] === 'info' ? 'bg-orange-100 font-semibold text-orange-600' : 'bg-white'}`}
+                      onClick={() => toggleTab(index, 'info')}
+                    >
+                      <InformationCircleIcon className="w-5 h-5 mr-2" />
+                      My story!
+                    </button>
+                  </div>
+                  <div className="relative h-96">
+                    <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab[index] === 'info' ? 'opacity-0' : 'opacity-100'}`}>
+                      <img 
+                        src={pet.image} 
+                        alt={pet.name} 
+                        className={`w-full h-full object-cover ${pet.name === 'Fluffington' ? 'object-top' : 'object-center'}`} 
+                        style={pet.name === 'Fluffington' ? { objectPosition: '0 25%' } : {}}
+                      />
+                    </div>
+                    <div className={`absolute inset-0 bg-white p-4 overflow-y-auto transition-opacity duration-300 ${activeTab[index] === 'info' ? 'opacity-100' : 'opacity-0'}`}>
+                      <p>{pet.info}</p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold mb-1 text-orange-600">{pet.name}</h3>
+                    <p className="text-gray-600">{pet.nickname}</p>
+                  </div>
                 </div>
-            </section>
-        </main>
+              ))}
+            </div>
+          </section>
+        </div>
 
-        
+        <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-16 text-center">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay in touch!</h2>
+            <p className="text-lg mb-8">Keep up to date with our little kritters</p>
+            <form className="max-w-md mx-auto flex">
+              <input type="email" placeholder="Email Address" className="flex-grow py-3 px-4 rounded-l-full focus:outline-none focus:ring-2 focus:ring-orange-300" />
+              <button type="submit" className="bg-white text-orange-600 px-6 py-3 rounded-r-full font-semibold hover:bg-orange-100 transition duration-300">Subscribe</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div className="flex items-center mb-4 md:mb-0">
+              <HeartIcon className="w-8 h-8 mr-2 text-orange-400" />
+              <span className="text-2xl font-bold">Kare for Kritters</span>
+            </div>
+            <div className="flex flex-wrap justify-center md:justify-end gap-6">
+              <a href="#" className="hover:text-orange-400 transition duration-300">About Us</a>
+              <a href="#" className="hover:text-orange-400 transition duration-300">Locations</a>
+              <a href="#" className="hover:text-orange-400 transition duration-300">Application Form</a>
+              <a href="#" className="hover:text-orange-400 transition duration-300">Terms of Service</a>
+            </div>
+          </div>
+          
+          <p className="text-center text-sm text-gray-400">&copy; 2023 Kare for Kritters. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
-        </>
-    )
+  )
 }
-export default Homepage;
+
+export default Homepage

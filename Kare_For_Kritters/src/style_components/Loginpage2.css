@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     padding: 0 1rem;
 }
 
-/* Header styles */
+/* Header styles 
 .header {
     background-color: #000;
     position: sticky;
@@ -27,7 +27,7 @@ body {
     padding: 0.5rem 0;
 }
 
-/* Logo styles */
+/* Logo styles 
 .logo {
     display: flex;
     align-items: center;
@@ -51,13 +51,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Navigation and actions container */
+/* Navigation and actions container 
 .nav-and-actions {
     display: flex;
     align-items: center;
 }
 
-/* Navigation menu styles */
+/* Navigation menu styles 
 .nav-menu {
     display: flex;
     margin-right: 2rem;
@@ -83,7 +83,7 @@ body {
     text-transform: uppercase;
 }
 
-/* Dropdown menu styles */
+/* Dropdown menu styles 
 .dropdown {
     font-size: medium;
     display: none;
@@ -113,7 +113,7 @@ body {
     background-color: #4a98ea;
 }
 
-/* Header actions styles (search and login) */
+/* Header actions styles (search and login) 
 .header-actions {
     display: flex;
     align-items: center;
@@ -152,7 +152,7 @@ body {
     margin-bottom: 9%;
 }
 
-/* login and registration form styles */
+/* login and registration form styles 
 .login-container {
     max-width: 600px;
     margin: 2rem auto;
@@ -204,7 +204,7 @@ body {
     background-color: #2563eb;
 }
 
-/* newsletter signup styles */
+/* newsletter signup styles 
 .newsletter-signup {
     background-color: #000;
     color: #fff;
@@ -242,7 +242,7 @@ body {
     cursor: pointer;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments 
 @media (max-width: 768px) {
     .site-title {
         font-size: 2rem;

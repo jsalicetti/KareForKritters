@@ -1,8 +1,8 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed */
+    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed 
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
 
 
 
-/* header styles */
+/* header styles 
 .header {
     background-color: #000;
     position: sticky;
@@ -61,7 +61,7 @@ body {
 
 
 
-/* nav menu styles */
+/* nav menu styles 
 .nav-menu {
     display: flex;
     margin-right: 2rem;
@@ -120,7 +120,7 @@ body {
 
 
 
-/* header actions styles */
+/* header actions styles 
 .header-actions {
     display: flex;
     align-items: center;
@@ -162,7 +162,7 @@ body {
 
 
 
-/* success Stories styles */
+/* success Stories styles 
 .success-stories-main {
     padding: 2rem 0;
 }
@@ -209,7 +209,7 @@ body {
 
 
 
-/* Newsletter signup styles */
+/* Newsletter signup styles 
 .newsletter-signup {
     background-color: #000;
     color: #fff;
@@ -250,7 +250,7 @@ body {
 
 
 
-/* Responsive adjustments */
+/* Responsive adjustments 
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;

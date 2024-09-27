@@ -1,8 +1,8 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed */
+    background: linear-gradient(to bottom, #789fe7, #b6bfe6); /* Adjust colors as needed 
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
 
 
 
-/* header styles */
+/* header styles 
 .header {
     background-color: #000;
     position: sticky;
@@ -63,7 +63,7 @@ body {
 
 
 
-/* nav menu styles */
+/* nav menu styles 
 .nav-menu {
     display: flex;
     margin-right: 2rem;
@@ -122,7 +122,7 @@ body {
 
 
 
-/* header actions styles */
+/* header actions styles 
 .header-actions {
     display: flex;
     align-items: center;
@@ -164,14 +164,14 @@ body {
 
 
 
-/* Locations page styles */
+/* Locations page styles 
 #map {
-    height: 600px; /* Set height */
-    width: 300%; /* Set width */
-    border: 2px solid #333; /* Dark border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    margin: 20px 0; /* Space above and below */
+    height: 600px; /* Set height 
+    width: 300%; /* Set width 
+    border: 2px solid #333; /* Dark border 
+    border-radius: 8px; /* Rounded corners 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect 
+    margin: 20px 0; /* Space above and below 
 }
 
 .locations-main h1 {
@@ -269,7 +269,7 @@ font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
-/* Newsletter signup styles */
+/* Newsletter signup styles 
 .newsletter-signup {
     background-color: #000;
     color: #fff;
@@ -279,7 +279,7 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* stay in touch bottom text */
+/* stay in touch bottom text 
 .newsletter-signup h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;

@@ -2,39 +2,12 @@ import React, { useState } from 'react'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/solid'
 import '../App.css'
 
-const Successpage = () => {
-  const successStories = [
-    { 
-      image: '/Images-React/Rue.jpg', 
-      name: 'Ruebear Mcstuffins',
-      story: 'Ruebear Mcstuffins found her forever home with a loving family after months in the shelter. Her playful nature and adorable face quickly won over her new family, and now she enjoys long walks in the park and cozy evenings by the fireplace.'
-    },
-    { 
-      image: '/Images-React/RJ.jpg', 
-      name: 'RJ',
-      story: 'RJ, a shy cat, blossomed in his new home and became the family\'s best friend. Once timid and reserved, RJ now greets visitors at the door and loves to curl up on laps during movie nights.'
-    },
-    { 
-      image: '/Images-React/Juju.jpg', 
-      name: 'Juju',
-      story: 'Juju, an older dog, found a second chance at happiness with a young couple. Despite her age, Juju\'s energy and love for life have brought joy and laughter to her new home. She\'s proof that senior pets have so much love to give.'
-    },
-    { 
-      image: '/Images-React/Oreo.jpg', 
-      name: 'Oreo',
-      story: 'Oreo, a rescue dog, now hops freely in his new family\'s garden. After overcoming physical challenges, Oreo\'s resilience and zest for life inspire everyone around him. He\'s become the neighborhood\'s favorite four-legged friend.'
-    },
-    { 
-      image: '/Images-React/Gordo.jpg', 
-      name: 'Gordo',
-      story: 'Gordo, a handsome dog, found a loving home and a spacious backyard to explore. Once confined to a small apartment, Gordo now spends his days chasing butterflies and playing fetch with his new family. His gentle nature has made him the perfect companion for the family\'s young children.'
-    },
-    { 
-      image: '/Images-React/Lux.jpg', 
-      name: 'Lux',
-      story: 'Lux, a sweet little angel, inspired her new family with her resilience and affection. Despite a rough start in life, Lux\'s loving nature shines through. She\'s become an emotional support animal for her owner, proving that sometimes pets rescue us.'
-    },
-  ]
+const MeetYourNewBestfriend = () => {
+  const pets = Array(15).fill().map((_, index) => ({
+    image: `/placeholder.svg?height=300&width=300&text=Pet ${index + 1}`,
+    name: `Pet ${index + 1}`,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  }))
 
   const navItems = [
     { 
@@ -69,32 +42,46 @@ const Successpage = () => {
     }
   ]
 
-  const FlipCard = ({ story }) => {
+  const FlipCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false)
 
     const handleClick = () => {
       setIsFlipped(!isFlipped)
     }
 
+    const handleAdoptClick = (e) => {
+      e.stopPropagation()
+      // Add adoption logic here
+      console.log(`Adopting ${pet.name}`)
+    }
+
     return (
       <div 
-        className="flip-card w-full h-[420px] cursor-pointer perspective" // Increased height to 420px
+        className="flip-card w-full h-[420px] cursor-pointer perspective"
         onClick={handleClick}
       >
         <div className={`flip-card-inner w-full h-full relative transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
           <div className="flip-card-front w-full h-full absolute backface-hidden overflow-hidden rounded-lg">
             <img 
-              src={story.image} 
-              alt={story.name} 
-              className="w-full h-[120%] object-cover object-center" // Increased height to 120% and added object-center
+              src={pet.image} 
+              alt={pet.name} 
+              className="w-full h-[120%] object-cover object-center"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-              <h3 className="text-xl font-semibold text-white">{story.name}</h3>
+              <h3 className="text-xl font-semibold text-white">{pet.name}</h3>
             </div>
           </div>
-          <div className="flip-card-back w-full h-full absolute backface-hidden rotate-y-180 bg-white rounded-lg p-4 overflow-y-auto">
-            <h3 className="text-xl font-semibold mb-2">{story.name}</h3>
-            <p className="text-gray-700">{story.story}</p>
+          <div className="flip-card-back w-full h-full absolute backface-hidden rotate-y-180 bg-white rounded-lg p-4 overflow-y-auto flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">{pet.name}</h3>
+              <p className="text-gray-700">{pet.description}</p>
+            </div>
+            <button 
+              onClick={handleAdoptClick}
+              className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition duration-300"
+            >
+              Adopt me!
+            </button>
           </div>
         </div>
       </div>
@@ -110,8 +97,7 @@ const Successpage = () => {
             <span>KARE FOR KRITTERS</span>
           </a>
           <nav className="hidden md:flex space-x-6">
-
-          {navItems.map((item) => (
+            {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 <a href="#" className="flex items-center hover:text-orange-200 transition duration-300">
                   {item.name}
@@ -140,12 +126,11 @@ const Successpage = () => {
       </header>
 
       <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-5xl font-bold text-center mb-4">Success Stories</h1>
-        <h2 className="text-4xl font-bold text-center text-white mb-12">Our top stories of 2024</h2>
+        <h1 className="text-5xl font-bold text-center mb-12">Meet your new Bestfriend!</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {successStories.map((story, index) => (
-            <FlipCard key={index} story={story} />
+          {pets.map((pet, index) => (
+            <FlipCard key={index} pet={pet} />
           ))}
         </div>
       </main>
@@ -182,4 +167,4 @@ const Successpage = () => {
   )
 }
 
-export default Successpage
+export default MeetYourNewBestfriend
