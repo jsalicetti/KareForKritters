@@ -79,7 +79,8 @@ const AdoptionApplication = () => {
           </div>
         </div>
       </header>
-
+    
+    
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-8">Adoption Application</h1>
         <form className="bg-white shadow-md rounded-lg p-8 mb-8">
