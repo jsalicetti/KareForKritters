@@ -182,7 +182,7 @@ const AdoptionApplication = () => {
               <div>
                 <label className="block mb-1 font-medium">What type of pet are you interested in adopting?</label>
                 <div className="flex space-x-4">
-                  {['Dog', 'Cat', 'Other'].map((type) => (
+                  {['Dog', 'Cat',].map((type) => (
                     <label key={type} className="flex items-center">
                       <input type="checkbox" name="pet-type" value={type.toLowerCase()} className="mr-2" />
                       <span>{type}</span>

@@ -8,19 +8,15 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @ToString
-public class Pets {
+public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer petID;
-    @Column(name = "name", nullable = false)
-    String name;
-    @Column(name = "age", nullable = false)
-    Integer age;
-    @Column(name = "breed", nullable = false)
-    String breed;
+    Integer ID;
+    @Column(name = "admin", nullable = false)
+    String admin;
+    @Column(name = "user", nullable = false)
+    Integer user;
     @Column(name = "uid", nullable = false)
     Integer uid;
 }
-
-
