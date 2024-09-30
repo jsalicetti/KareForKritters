@@ -110,8 +110,8 @@ const navItems = [
             ))}
           </div>
         </section>
-        <br></br><br></br><br></br><br></br><br></br>
-        <div className="aspect-w-8 aspect-h-4 w-3/4 mx-auto">
+        <br></br><br></br>
+        <div className="w-full h-[500px] mx-auto">
           <iframe 
             src="https://www.youtube.com/embed/jFMA5ggFsXU" 
             title="Pet Training Video"
@@ -120,7 +120,7 @@ const navItems = [
             className="w-full h-full rounded-lg shadow-lg"
           ></iframe>
         </div>
-      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+      <br></br><br></br><br></br>
       <section id="health-tips" className="bg-white rounded-lg shadow-lg p-8 mb-12">
 <h2 className="text-3xl font-bold mb-6 text-orange-600">HEALTH TIPS</h2>
           <ol className="space-y-6">
@@ -143,9 +143,9 @@ const navItems = [
             ))}
           </ol>
         </section>
-        <br></br><br></br><br></br><br></br><br></br>
+        <br></br><br></br>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="aspect-w-16 aspect-h-9 w-3/4 mx-auto">
+          <div className="w-full h-[500px]">
             <iframe 
               src="https://www.youtube.com/embed/o_YxH7h2dws" 
               title="Nail Cutting Video"
@@ -154,7 +154,7 @@ const navItems = [
               className="w-full h-full rounded-lg shadow-lg"
             ></iframe>
           </div>
-          <div className="aspect-w-16 aspect-h-9 w-3/4 mx-auto">
+          <div className="w-full h-[500px]">
             <iframe 
               src="https://www.youtube.com/embed/AZr97y1b9f0" 
               title="Pet-Proofing Video"
@@ -164,7 +164,7 @@ const navItems = [
             ></iframe>
           </div>
         </div>
-        <br></br><br></br><br></br><br></br><br></br><br></br>
+        <br></br><br></br>
         <section  id="pet-insurance" className="bg-white rounded-lg shadow-lg p-8 mb-12">
   <h2 className="text-3xl font-bold mb-6 text-orange-600">PET INSURANCE</h2>
           <p className="mb-4">Pet insurance can help by offsetting some or most of the costs of diagnosing, treating and managing your pet's illness or injury. Here are some reasons why you should consider getting pet insurance for your furry friend:</p>

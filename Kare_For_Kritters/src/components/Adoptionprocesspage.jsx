@@ -85,7 +85,14 @@ const Adoptionprocesspage = () => {
         
         <section className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <p className="text-xl mb-6">Welcome to our adoption process! <br></br>We're excited to help you find your perfect furry friend. Our process is <br></br>designed to ensure the best match between pets and their new families.</p>
+          <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+            Welcome to our adoption process!
+          </p>
+          <p className="text-base md:text-lg mb-6">
+            We're excited to help you find your perfect furry friend. Our process is <br className="hidden md:inline" />
+            designed to ensure the best match between pets and their new families.
+          </p>
+          
             <button className="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">View Adoptable Pets</button>
           </div>
           <div className="md:w-1/2">
@@ -158,10 +165,10 @@ const Adoptionprocesspage = () => {
 
         <section className="flex flex-col md:flex-row justify-between items-center mb-16">
           <div className="md:w-[48%] mb-8 md:mb-0">
-            <img src="/placeholder.svg?height=400&width=600" alt="Adoption Image 1" className="rounded-lg shadow-xl w-full h-auto" />
+            <img src="/Images-React/application-image.jpg" alt="Adoption Image 1" className="rounded-lg shadow-xl w-full h-auto" />
           </div>
           <div className="md:w-[48%]">
-            <img src="/placeholder.svg?height=400&width=600" alt="Adoption Image 2" className="rounded-lg shadow-xl w-full h-auto" />
+            <img src="/Images-React/application-image2.jpg?height=400&width=600" alt="Adoption Image 2" className="rounded-lg shadow-xl w-full h-auto" />
           </div>
         </section>
 
@@ -222,7 +229,7 @@ const getStepTitle = (step) => {
 
 const getStepContent = (step) => {
   const contents = [
-    "Browse our selection of adorable pets waiting for their forever homes. You can filter by species, age, and other characteristics to find your perfect match.",
+    "Browse our selection of adorable pets waiting for their forever homes.",
     "Fill out our comprehensive adoption application. This helps us understand your lifestyle and preferences to ensure a good fit for both you and the pet.",
     "Schedule a meet-and-greet with your potential new family member. This is a great opportunity to interact and see if it's a good match.",
     "Once you've found your perfect pet, we'll guide you through the final steps of the adoption process, including paperwork and any necessary home visits."

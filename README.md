@@ -1,5 +1,5 @@
 # KARE FOR KRITTERS 🐾
-
+## Final Project Submission
 ![Screenshot (47)](https://github.com/user-attachments/assets/925a7121-6e40-4c68-b950-55cde2310bc4)
 
 # Why this project?

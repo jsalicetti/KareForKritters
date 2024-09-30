@@ -284,10 +284,10 @@ const AdoptionApplication = () => {
           </div>
         </form>
 
-        {/* Image placeholder added below the form */}
+        {/* image placeholder added below the form */}
         <div className="mt-8 flex justify-center">
           <img
-            src="/placeholder.svg?height=300&width=600"
+            src="/Images-React/application1.webp?height=300&width=600"
             alt="Adoption process illustration"
             className="rounded-lg shadow-md max-w-full h-auto"
           />

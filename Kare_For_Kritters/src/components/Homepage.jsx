@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon, PhotoIcon, InformationCircleIcon, MegaphoneIcon, XCircleIcon, } from '@heroicons/react/24/solid'
 
 const Homepage = () => {
@@ -19,13 +20,13 @@ const Homepage = () => {
       name: 'Fluffington', 
       nickname: "Who doesn't have a nickname yet!", 
       image: '/Images-React/fluffington.jpg',
-      info: "Fluffington, a majestic Maine Coon, was rescued from a hoarding situation. Now, he's living his best life in a loving home, enjoying sunny spots and gourmet cat food."
+      info: "Fluffington, a fluffy little gentleman, was rescued after being found in a box on the side of a highway. His tiny heart must have been filled with fear and uncertainty, wondering if anyone would come for him. The joy in his wagging tail speaks volumes, a testament to the resilience of his spirit. Fluffington has traded the shadows of his past for the embrace of a family that cherishes him, reminding us all of the power of love to heal even the most fragile of souls. He's an energetic little guy with a big heart for humans. He's known for being a bit of a barker, but it's all for attention - he doesn't bite! He loves belly scratches and ripping apart his toys so he can get new ones. Now, he's living his best life in a loving home, enjoying sunny spots and gourmet dog food."
     },
     { 
       name: 'Bagel', 
       nickname: 'Otherwise known as Cream Cheese!', 
       image: '/Images-React/bagel.jpg',
-      info: "Bagel, a chubby tabby, was found in a dumpster behind a bakery. His new family couldn't resist his round shape and named him after their favorite breakfast treat."
+      info: "Bagel, a curious little cat, was found in the West Bronx. Her new family couldn't resist her multi-colored fur and named her after their favorite breakfast treat. Little did they know, this fluffy bundle of mischief had a penchant for chaos that would keep them on their toes. Bagel has made it her personal mission to test the laws of gravity, knocking everything from delicate glass cups to unsuspecting cereal boxes off tables with the grace of a tiny demolition expert. Yet, for all her clumsy antics, she’s also a certified cuddle bug, curling up with her sister Rue, purring like an engine as they share warmth and secrets. Her favorite snacks are chewy sticks and pizza, leading to moments of pure delight when she manages to snag a slice from an unsuspecting plate. With Bagel around, every day is a delightful mix of cuddles, chaos, and the occasional pizza heist!"
     },
     { 
       name: 'Kage', 
@@ -150,14 +151,14 @@ const Homepage = () => {
             <br></br> <br></br> <br></br> <br></br> 
             <div className="text-center">
               <img src="/Images-React/catdonate.jpg" alt="Cat Donate" className="w-64 h-64 object-cover rounded-lg shadow-lg mb-4 transform hover:scale-105 transition duration-300" />
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">Interested</button>
+              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">Interested in Cats?</button>
             </div>
           </section>
 
           <section className="text-center my-16 bg-white py-16 rounded-lg shadow-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-orange-600">Our Mission</h2>
             <p className="text-lg md:text-xl max-w-3xl mx-auto px-4">
-              With Kare for Kritters, you are working to save the lives of cats and dogs all across America, giving pets a second chance at happiness and a home.
+              With Kare for Kritters, you are working to save the lives of cats and dogs all across New York City, giving pets a second chance at happiness and a home.
             </p>
           </section>
 

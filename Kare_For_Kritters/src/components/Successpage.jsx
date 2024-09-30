@@ -7,12 +7,12 @@ const Successpage = () => {
     { 
       image: '/Images-React/Rue.jpg', 
       name: 'Ruebear Mcstuffins',
-      story: 'Ruebear Mcstuffins found her forever home with a loving family after months in the shelter. Her playful nature and adorable face quickly won over her new family, and now she enjoys long walks in the park and cozy evenings by the fireplace.'
+      story: 'Ruebear Mcstuffins found her forever home with a loving family after months in the shelter. Her playful nature and adorable face quickly won over her new family, and now she enjoys playing with her favorite shoe string, eating her chewy stick snacks and pigeon watching by the window for hours.'
     },
     { 
       image: '/Images-React/RJ.jpg', 
       name: 'RJ',
-      story: 'RJ, a shy cat, blossomed in his new home and became the family\'s best friend. Once timid and reserved, RJ now greets visitors at the door and loves to curl up on laps during movie nights.'
+      story: 'RJ, a shy cat who once hid in the closet for hours, blossomed in his new home and became the family\'s best friend. Once timid and reserved, RJ now greets visitors at the door and loves to curl up on laps during movie nights. He is incredibly protective of his sister Rue and loves to knock over his food container in hopes to sneak a midnight snack'
     },
     { 
       image: '/Images-React/Juju.jpg', 
