@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon, PhotoIcon, InformationCircleIcon, MegaphoneIcon, XCircleIcon, } from '@heroicons/react/24/solid'
 
 const Homepage = () => {
@@ -26,13 +26,13 @@ const Homepage = () => {
       name: 'Bagel', 
       nickname: 'Otherwise known as Cream Cheese!', 
       image: '/Images-React/bagel.jpg',
-      info: "Bagel, a curious little cat, was found in the West Bronx. Her new family couldn't resist her multi-colored fur and named her after their favorite breakfast treat. Little did they know, this fluffy bundle of mischief had a penchant for chaos that would keep them on their toes. Bagel has made it her personal mission to test the laws of gravity, knocking everything from delicate glass cups to unsuspecting cereal boxes off tables with the grace of a tiny demolition expert. Yet, for all her clumsy antics, she’s also a certified cuddle bug, curling up with her sister Rue, purring like an engine as they share warmth and secrets. Her favorite snacks are chewy sticks and pizza, leading to moments of pure delight when she manages to snag a slice from an unsuspecting plate. With Bagel around, every day is a delightful mix of cuddles, chaos, and the occasional pizza heist!"
+      info: "Bagel, a curious little cat, was found in the West Bronx. Her new family couldn't resist her multi-colored fur and named her after their favorite breakfast treat. Little did they know, this fluffy bundle of mischief had a penchant for chaos that would keep them on their toes. Bagel has made it her personal mission to test the laws of gravity, knocking everything from delicate glass cups to unsuspecting cereal boxes off tables with the grace of a tiny demolition expert. Yet, for all her clumsy antics, she's also a certified cuddle bug, curling up with her sister Rue, purring like an engine as they share warmth and secrets. Her favorite snacks are chewy sticks and pizza, leading to moments of pure delight when she manages to snag a slice from an unsuspecting plate. With Bagel around, every day is a delightful mix of cuddles, chaos, and the occasional pizza heist!"
     },
     { 
       name: 'Kage', 
       nickname: 'Otherwise known as Ro-Meow Santos!', 
       image: '/Images-React/Kage.jpg',
-      info: "Kage, a sleek black cat, was a stray living in a parking garage. He now rules his new home like a shadow king, earning his nickname from his stealthy antics. At first glance, Kage might seem aloof, a mysterious figure who prefers to observe from the shadows rather than socialize with strangers. But once he decides you’re worthy of his trust, a whole new side emerges—he transforms from a solitary phantom into a purring, affectionate companion, often curling up beside his humans and demanding head rubs with an air of regal entitlement. His favorite snack is a decadent mix of turkey and egg whites, which he treats as a royal feast, and you can practically see him plotting ways to charm his way into an extra helping. Kage’s favorite toy, a brightly colored cat wand, becomes his trusty sword as he performs daring leaps and stealthy ambushes, turning even the simplest playtime into an epic saga of bravery and cunning."
+      info: "Kage, a sleek black cat, was a stray living in a parking garage. He now rules his new home like a shadow king, earning his nickname from his stealthy antics. At first glance, Kage might seem aloof, a mysterious figure who prefers to observe from the shadows rather than socialize with strangers. But once he decides you're worthy of his trust, a whole new side emerges—he transforms from a solitary phantom into a purring, affectionate companion, often curling up beside his humans and demanding head rubs with an air of regal entitlement. His favorite snack is a decadent mix of turkey and egg whites, which he treats as a royal feast, and you can practically see him plotting ways to charm his way into an extra helping. Kage's favorite toy, a brightly colored cat wand, becomes his trusty sword as he performs daring leaps and stealthy ambushes, turning even the simplest playtime into an epic saga of bravery and cunning."
     },
   ]
 
@@ -135,9 +135,11 @@ const Homepage = () => {
                 <HeartIcon className="w-8 h-8 text-red-400 mr-2 animate-pulse" />
                 <span className="text-2xl font-semibold">9 animals adopted this month</span>
               </div>
-              <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
-                Adopt Now
-              </button>
+              <Link to="/adoption-application" className="inline-block">
+                <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+                  Adopt Now
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -146,12 +148,20 @@ const Homepage = () => {
           <section className="flex flex-col md:flex-row justify-center gap-8 my-16">
             <div className="text-center">
               <img src="/Images-React/dogdonate.jpg" alt="Dog Donate" className="w-64 h-64 object-cover rounded-lg shadow-lg mb-4 transform hover:scale-105 transition duration-300" />
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">Interested in Dogs?</button>
+              <Link to="/pets?type=dog" className="inline-block">
+                <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+                  Interested in Dogs?
+                </button>
+              </Link>
             </div>
             <br></br> <br></br> <br></br> <br></br> 
             <div className="text-center">
               <img src="/Images-React/catdonate.jpg" alt="Cat Donate" className="w-64 h-64 object-cover rounded-lg shadow-lg mb-4 transform hover:scale-105 transition duration-300" />
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">Interested in Cats?</button>
+              <Link to="/pets?type=cat" className="inline-block">
+                <button className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+                  Interested in Cats?
+                </button>
+              </Link>
             </div>
           </section>
 
