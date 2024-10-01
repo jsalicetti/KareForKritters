@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
 
 const Adoptionprocesspage = () => {
@@ -93,7 +94,9 @@ const Adoptionprocesspage = () => {
             designed to ensure the best match between pets and their new families.
           </p>
           
-            <button className="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">View Adoptable Pets</button>
+            <Link to="/pets" className="inline-block">
+              <button className="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition duration-300 transform hover:scale-105">View Adoptable Pets</button>
+            </Link>
           </div>
           <div className="md:w-1/2">
             <img src="/Images-React/adoption-process.jpg" alt="Adoption Process" className="rounded-lg shadow-xl w-full h-auto" />
@@ -175,12 +178,16 @@ const Adoptionprocesspage = () => {
         <section className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-8">READY TO ADOPT?</h2>
           <div className="flex flex-col md:flex-row justify-center gap-8">
-            <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
-              View Adoptable Pets
-            </button>
-            <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
-              Start Application
-            </button>
+            <Link to="/pets" className="inline-block">
+              <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+                View Adoptable Pets
+              </button>
+            </Link>
+            <Link to="/adoption-application" className="inline-block">
+              <button className="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+                Start Application
+              </button>
+            </Link>
           </div>
         </section>
       </main>
