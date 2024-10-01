@@ -1,44 +1,39 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/solid'
 
-const SignupPage = () => {
-  const [UserName, setUserName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [error, setError] = useState(null)
-  const navigate = useNavigate()
+const UserProfilePage = () => {
+  const [userData, setUserData] = useState({
+    fullName: '',
+    pronouns: '',
+    phoneNumber: '',
+    email: '',
+    address: '',
+    city: '',
+    state: '',
+    zipCode: '',
+  })
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    if (password !== confirmPassword) {
-      setError("Passwords don't match")
-      return
-    }
-    try {
-      console.log('Sending request with:', { userName: UserName, email: email, password: password })
-      const response = await fetch('http://localhost:8081/register', {
-        method: 'POST',
-        body: JSON.stringify({ userName: UserName, email: email, password: password }),
-        headers: {
-            'Content-Type': 'application/json',
-          },
-      })
-      if (response.status === 200) {
-        navigate('/login')
-      }
+  const states = [
+    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+    'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+    'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
+    'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
+    'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+  ]
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Network response was not ok')
-      }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setUserData(prevData => ({
+      ...prevData,
+      [name]: value
+    }))
+  }
 
-      setError(null)
-    } catch (error) {
-      console.error('Error during signup:', error)
-      setError(error.message || 'Signup failed. Please try again.')
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Here you would typically send the updated data to your backend
+    console.log('Updated user data:', userData)
+    alert('Profile updated successfully!')
   }
 
   const navItems = [
@@ -106,27 +101,54 @@ const SignupPage = () => {
               <input type="search" placeholder="Search..." className="py-1 px-3 pr-8 rounded-full bg-orange-500 text-white placeholder-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-300" />
               <MagnifyingGlassIcon className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-orange-200" />
             </div>
-            <button className="bg-white text-orange-600 px-4 py-1 rounded-full hover:bg-orange-100 transition duration-300">LOGIN</button>
+            <button className="bg-white text-orange-600 px-4 py-1 rounded-full hover:bg-orange-100 transition duration-300">LOGOUT</button>
           </div>
         </div>
       </header>
 
       <main className="flex-grow container mx-auto px-4 py-8">
-        <br></br> <br></br> <br></br> <br></br>
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-8">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">Sign Up / Register</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">User Profile</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="UserName" className="block text-sm font-medium text-gray-700">Name</label>
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name</label>
                 <input
                   type="text"
-                  id="name"
-                  name="UserName"
-                  value={UserName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  required
+                  id="fullName"
+                  name="fullName"
+                  value={userData.fullName}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="pronouns" className="block text-sm font-medium text-gray-700">Pronouns</label>
+                <select
+                  id="pronouns"
+                  name="pronouns"
+                  value={userData.pronouns}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
+                >
+                  <option value="">Select pronouns</option>
+                  <option value="he/him">he/him</option>
+                  <option value="she/her">she/her</option>
+                  <option value="they/them">they/them</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  value={userData.phoneNumber}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
                 />
               </div>
               <div>
@@ -135,50 +157,73 @@ const SignupPage = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
+                  value={userData.email}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
                 <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={userData.address}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
+                <label htmlFor="city" className="block text-sm font-medium text-gray-700">City</label>
                 <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={userData.city}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="state" className="block text-sm font-medium text-gray-700">State</label>
+                <select
+                  id="state"
+                  name="state"
+                  value={userData.state}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
+                >
+                  <option value="">Select a state</option>
+                  {states.map((state) => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700">Zip Code</label>
+                <input
+                  type="text"
+                  id="zipCode"
+                  name="zipCode"
+                  value={userData.zipCode}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+                  required
                 />
               </div>
               <div>
                 <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-                  Sign Up
+                  Update Profile
                 </button>
               </div>
             </form>
-            {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
-          </div>
-          <div className="px-8 py-6 bg-gray-50 border-t border-gray-200">
-            <p className="text-xs text-gray-600 text-center">Already have an account? <a href="/login" className="font-medium text-orange-600 hover:text-orange-500">Log in</a></p>
           </div>
         </div>
       </main>
-      <br></br> <br></br> <br></br> <br></br>
 
       <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-16 text-center">
         <div className="container mx-auto px-4">
@@ -212,4 +257,4 @@ const SignupPage = () => {
   )
 }
 
-export default SignupPage
+export default UserProfilePage

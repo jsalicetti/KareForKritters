@@ -2,16 +2,7 @@ import React, { useRef } from 'react'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/solid'
 
 const Resourcespage = () => {
-// const training = useRef(null)
-//   const health = useRef(null)
-//   const insurance = useRef(null)
 
-//   const scrollToSection = (elementRef) => {
-//     window.scrollTo({
-//         top: elementRef.current.offsetTop,
-//         behavior: 'smooth',
-//     });
-//   };
 
 const navItems = [
   { 
@@ -165,7 +156,7 @@ const navItems = [
           </div>
         </div>
         <br></br><br></br>
-        <section  id="pet-insurance" className="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <section id="pet-insurance" className="bg-white rounded-lg shadow-lg p-8 mb-12">
   <h2 className="text-3xl font-bold mb-6 text-orange-600">PET INSURANCE</h2>
           <p className="mb-4">Pet insurance can help by offsetting some or most of the costs of diagnosing, treating and managing your pet's illness or injury. Here are some reasons why you should consider getting pet insurance for your furry friend:</p>
           <ul className="list-disc list-inside mb-6">
@@ -173,12 +164,23 @@ const navItems = [
             <li>Choice of veterinarian</li>
             <li>Focus on your pet's care, not cost</li>
           </ul>
-          <h3 className="text-2xl font-semibold mb-4">Let's take a look at some Pet Insurance Providers in New York</h3>
+          <h3 className="text-2xl font-semibold mb-4">Take a look at some Pet Insurance Providers in New York</h3>
+          <h2>We advise you to do your own research and choose the best option for you and your pet!</h2>
+          <br></br>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {['Healthy Paws', 'Embrace', 'Trupanion', 'Nationwide', 'ASPCA', 'Petplan'].map((provider) => (
-              <div key={provider} className="bg-orange-100 p-4 rounded-lg text-center">
-                <div className="w-16 h-16 bg-orange-300 rounded-full mx-auto mb-2"></div>
-                <p className="font-semibold">{provider}</p>
+            {[
+              { name: 'Healthy Paws', icon: '🐾' },
+              { name: 'Embrace', icon: '🤗' },
+              { name: 'Trupanion', icon: '🐶' },
+              { name: 'Nationwide', icon: '🏠' },
+              { name: 'ASPCA', icon: '🐱' },
+              { name: 'Petplan', icon: '📋' }
+            ].map((provider) => (
+              <div key={provider.name} className="bg-orange-100 p-4 rounded-lg text-center">
+                <div className="w-16 h-16 bg-orange-300 rounded-full mx-auto mb-2 flex items-center justify-center text-3xl">
+                  {provider.icon}
+                </div>
+                <p className="font-semibold">{provider.name}</p>
               </div>
             ))}
           </div>

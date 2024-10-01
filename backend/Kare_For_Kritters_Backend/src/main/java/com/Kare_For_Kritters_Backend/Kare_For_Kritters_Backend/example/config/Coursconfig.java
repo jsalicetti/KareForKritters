@@ -28,7 +28,7 @@ public class Coursconfig {
 
         http.cors(Customizer.withDefaults()).csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**", "/register", "/Login").permitAll()
+                        .requestMatchers("/api/**", "/register", "/Login", "/sendapplication").permitAll()
                         .anyRequest().authenticated());
         return http.build();
     }
@@ -37,7 +37,9 @@ public class Coursconfig {
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("http://localhost:5174");
+//        config.addAllowedOrigin("*");
+
 
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");

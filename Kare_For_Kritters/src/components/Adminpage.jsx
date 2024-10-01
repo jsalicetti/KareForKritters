@@ -1,45 +1,21 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/solid'
+import '../App.css'
 
-const SignupPage = () => {
-  const [UserName, setUserName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [error, setError] = useState(null)
-  const navigate = useNavigate()
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    if (password !== confirmPassword) {
-      setError("Passwords don't match")
-      return
-    }
-    try {
-      console.log('Sending request with:', { userName: UserName, email: email, password: password })
-      const response = await fetch('http://localhost:8081/register', {
-        method: 'POST',
-        body: JSON.stringify({ userName: UserName, email: email, password: password }),
-        headers: {
-            'Content-Type': 'application/json',
-          },
-      })
-      if (response.status === 200) {
-        navigate('/login')
-      }
-
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Network response was not ok')
-      }
-
-      setError(null)
-    } catch (error) {
-      console.error('Error during signup:', error)
-      setError(error.message || 'Signup failed. Please try again.')
-    }
-  }
+const Applications = () => {
+  // Replace the pets array with real data including image URLs
+  const pets = [
+    {
+      image: "/images/application1.jpg",
+      name: "Applicant Name: Justyn M.",
+      description: "Friendly Golden Retriever looking for an active family."
+    },
+    {
+      image: "/images/application2.jpg",
+      name: "Applicant Name: Ashley E.",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+  ];
 
   const navItems = [
     { 
@@ -73,6 +49,52 @@ const SignupPage = () => {
       ]
     }
   ]
+
+  const FlipCard = ({ pet }) => {
+    const [isFlipped, setIsFlipped] = useState(false)
+
+    const handleClick = () => {
+      setIsFlipped(!isFlipped)
+    }
+
+    const handleAdoptClick = (e) => {
+      e.stopPropagation()
+      // Add adoption logic here
+      console.log(`Adopting ${pet.name}`)
+    }
+
+    return (
+      <div 
+        className="flip-card w-full h-[420px] cursor-pointer perspective"
+        onClick={handleClick}
+      >
+        <div className={`flip-card-inner w-full h-full relative transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+          <div className="flip-card-front w-full h-full absolute backface-hidden overflow-hidden rounded-lg">
+            <img 
+              src={pet.image} 
+              alt={pet.name} 
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+              <h3 className="text-xl font-semibold text-white">{pet.name}</h3>
+            </div>
+          </div>
+          <div className="flip-card-back w-full h-full absolute backface-hidden rotate-y-180 bg-white rounded-lg p-4 overflow-y-auto flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">{pet.name}</h3>
+              <p className="text-gray-700">{pet.description}</p>
+            </div>
+            <button 
+              onClick={handleAdoptClick}
+              className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition duration-300"
+            >
+              Adopt me!
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-400 to-blue-200 text-gray-800 font-sans">
@@ -112,75 +134,16 @@ const SignupPage = () => {
       </header>
 
       <main className="flex-grow container mx-auto px-4 py-8">
-        <br></br> <br></br> <br></br> <br></br>
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="p-8">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">Sign Up / Register</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="UserName" className="block text-sm font-medium text-gray-700">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="UserName"
-                  value={UserName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div>
-                <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-                  Sign Up
-                </button>
-              </div>
-            </form>
-            {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
-          </div>
-          <div className="px-8 py-6 bg-gray-50 border-t border-gray-200">
-            <p className="text-xs text-gray-600 text-center">Already have an account? <a href="/login" className="font-medium text-orange-600 hover:text-orange-500">Log in</a></p>
-          </div>
+        <h1 className="text-5xl font-bold text-center mb-12">Applications</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {pets.map((pet, index) => (
+            <FlipCard key={index} pet={pet} />
+          ))}
         </div>
       </main>
-      <br></br> <br></br> <br></br> <br></br>
 
-      <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-16 text-center">
+      <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-16 text-center mt-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay in touch!</h2>
           <p className="text-lg mb-8">Keep up to date with our little kritters</p>
@@ -212,4 +175,4 @@ const SignupPage = () => {
   )
 }
 
-export default SignupPage
+export default Applications

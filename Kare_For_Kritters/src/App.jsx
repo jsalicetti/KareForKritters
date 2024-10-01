@@ -8,6 +8,8 @@ import Loginpage from './components/Loginpage';
 import Applicationpage from './components/Applicationpage';
 import Signuppage from './components/Signuppage';
 import Viewallpetspage from './components/Viewallpetspage';
+import Userprofilepage from './components/Userprofilepage';
+import Adminpage from './components/Adminpage';
 
 
 // * save for later - anchors for resources page
@@ -28,6 +30,8 @@ export default function App () {
         <Route path="/adoption-application" element={<Applicationpage />} />
         <Route path="/signup" element={<Signuppage />} />
         <Route path="/pets" element={<Viewallpetspage />} />
+        <Route path="/userprofile" element={<Userprofilepage />} />
+        <Route path="/admin" element={<Adminpage />} />
       </Routes>
     </BrowserRouter>
   );

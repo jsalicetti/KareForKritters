@@ -3,11 +3,84 @@ import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/reac
 import '../App.css'
 
 const MeetYourNewBestfriend = () => {
-  const pets = Array(15).fill().map((_, index) => ({
-    image: `/placeholder.svg?height=300&width=300&text=Pet ${index + 1}`,
-    name: `Pet ${index + 1}`,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  }))
+  // Replace the pets array with real data including image URLs
+  const pets = [
+    {
+      image: "/images/dog1.jpg",
+      name: "Buddy",
+      description: "Friendly Golden Retriever looking for an active family."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/dog1.jpg",
+      name: "Buddy",
+      description: "Friendly Golden Retriever looking for an active family."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+    {
+      image: "/images/cat1.jpg",
+      name: "Whiskers",
+      description: "Playful tabby cat who loves to cuddle."
+    },
+  ];
 
   const navItems = [
     { 
@@ -65,7 +138,7 @@ const MeetYourNewBestfriend = () => {
             <img 
               src={pet.image} 
               alt={pet.name} 
-              className="w-full h-[120%] object-cover object-center"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
               <h3 className="text-xl font-semibold text-white">{pet.name}</h3>

@@ -30,9 +30,9 @@ const Homepage = () => {
     },
     { 
       name: 'Kage', 
-      nickname: 'Otherwise known as Ro-meow Santos!', 
+      nickname: 'Otherwise known as Ro-Meow Santos!', 
       image: '/Images-React/Kage.jpg',
-      info: "Kage, a sleek black cat, was a stray living in a parking garage. He now rules his new home like a shadow king, earning his nickname from his stealthy antics."
+      info: "Kage, a sleek black cat, was a stray living in a parking garage. He now rules his new home like a shadow king, earning his nickname from his stealthy antics. At first glance, Kage might seem aloof, a mysterious figure who prefers to observe from the shadows rather than socialize with strangers. But once he decides you’re worthy of his trust, a whole new side emerges—he transforms from a solitary phantom into a purring, affectionate companion, often curling up beside his humans and demanding head rubs with an air of regal entitlement. His favorite snack is a decadent mix of turkey and egg whites, which he treats as a royal feast, and you can practically see him plotting ways to charm his way into an extra helping. Kage’s favorite toy, a brightly colored cat wand, becomes his trusty sword as he performs daring leaps and stealthy ambushes, turning even the simplest playtime into an epic saga of bravery and cunning."
     },
   ]
 

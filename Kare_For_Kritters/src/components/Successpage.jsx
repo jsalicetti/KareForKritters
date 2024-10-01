@@ -7,32 +7,50 @@ const Successpage = () => {
     { 
       image: '/Images-React/Rue.jpg', 
       name: 'Ruebear Mcstuffins',
-      story: 'Ruebear Mcstuffins found her forever home with a loving family after months in the shelter. Her playful nature and adorable face quickly won over her new family, and now she enjoys playing with her favorite shoe string, eating her chewy stick snacks and pigeon watching by the window for hours.'
+      age: '2 years old',
+      favoriteToy: 'Shoe String',
+      funFact: 'Will sit by the window and watch pigeons for hours',
+      story: 'Rue found her forever home with a loving family after months in the shelter. Her playful nature and adorable face quickly won over her new family, and now she enjoys cuddles, playing with her sister Bagel and laying on her back waiting for belly stratches.'
     },
     { 
       image: '/Images-React/RJ.jpg', 
       name: 'RJ',
+      age: '2 years old',
+      favoriteToy: 'Laser Pointer',
+      funFact: 'Can jump over 5 feet high',
       story: 'RJ, a shy cat who once hid in the closet for hours, blossomed in his new home and became the family\'s best friend. Once timid and reserved, RJ now greets visitors at the door and loves to curl up on laps during movie nights. He is incredibly protective of his sister Rue and loves to knock over his food container in hopes to sneak a midnight snack'
     },
     { 
       image: '/Images-React/Juju.jpg', 
       name: 'Juju',
-      story: 'Juju, an older dog, found a second chance at happiness with a young couple. Despite her age, Juju\'s energy and love for life have brought joy and laughter to her new home. She\'s proof that senior pets have so much love to give.'
+      age: '15 years old',
+      favoriteToy: 'Nemo stuffed animal',
+      funFact: 'Enjoys toilet paper',
+      story: 'Juju, an older dog, found a second chance at happiness with a young couple. Despite his age, Juju\'s energy and love for life have brought joy and laughter to his new home. He\'s proof that senior pets have so much love to give.'
     },
     { 
       image: '/Images-React/Oreo.jpg', 
       name: 'Oreo',
+      age: '3 years old',
+      favoriteToy: 'Tug-of-War Rope',
+      funFact: 'Can run 5 miles without stopping',
       story: 'Oreo, a rescue dog, now hops freely in his new family\'s garden. After overcoming physical challenges, Oreo\'s resilience and zest for life inspire everyone around him. He\'s become the neighborhood\'s favorite four-legged friend.'
     },
     { 
       image: '/Images-React/Gordo.jpg', 
       name: 'Gordo',
-      story: 'Gordo, a handsome dog, found a loving home and a spacious backyard to explore. Once confined to a small apartment, Gordo now spends his days chasing butterflies and playing fetch with his new family. His gentle nature has made him the perfect companion for the family\'s young children.'
+      age: '10 years old',
+      favoriteToy: 'Cow Stuffed Animal & any of his other 30 toys',
+      funFact: 'Sighs when not given enough attention',
+      story: 'Gordo, a handsome dog, found a loving home and a spacious backyard to explore. Once confined to a small apartment, Gordo now spends his days chasing butterflies and playing fetch with his new family. His gentle and affectionate nature has made him the perfect companion for the family\'s young children. Gordo will remind you of the love that can be found in the most unexpected places. Truly a one of a kind dog.'
     },
     { 
       image: '/Images-React/Lux.jpg', 
       name: 'Lux',
-      story: 'Lux, a sweet little angel, inspired her new family with her resilience and affection. Despite a rough start in life, Lux\'s loving nature shines through. She\'s become an emotional support animal for her owner, proving that sometimes pets rescue us.'
+      age: '5 year old',
+      favoriteToy: 'Catnip',
+      funFact: 'Will lay right on your face in the middle of the night for cuddles',
+      story: 'Lux, a sweet little angel, inspired her new family with her resilience and affection. Despite a rough start in life, Lux\'s loving nature shines through. She\'s become an emotional support animal for her owner, proving that sometimes pets rescue us. Lux will redefine your idea of what having a furry friend is all about. Truly a one of a kind cat.'
     },
   ]
 
@@ -94,6 +112,11 @@ const Successpage = () => {
           </div>
           <div className="flip-card-back w-full h-full absolute backface-hidden rotate-y-180 bg-white rounded-lg p-4 overflow-y-auto">
             <h3 className="text-xl font-semibold mb-2">{story.name}</h3>
+            <div className="mb-4">
+              <p className="text-sm text-gray-600"><strong>Age:</strong> {story.age}</p>
+              <p className="text-sm text-gray-600"><strong>Favorite Toy:</strong> {story.favoriteToy}</p>
+              <p className="text-sm text-gray-600"><strong>Fun Fact:</strong> {story.funFact}</p>
+            </div>
             <p className="text-gray-700">{story.story}</p>
           </div>
         </div>

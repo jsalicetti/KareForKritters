@@ -12,6 +12,7 @@ public class Userdto {
 
 
     private Integer UID;
+    private String Roles;
 
     private String Email;
     private String Password;

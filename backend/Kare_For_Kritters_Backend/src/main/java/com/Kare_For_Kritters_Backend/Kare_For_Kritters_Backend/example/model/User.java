@@ -19,13 +19,16 @@ public class User {
     String email;
     @Column(name = "password" ,nullable = false)
     String password;
-//    private String role;
+    @Column(name= "roles")
+    String roles;
+//
 
-    public User(Integer UID, String userName, String email, String password) {
+    public User(Integer UID, String userName, String email, String password, String roles) {
         this.UID = UID;
         UserName = userName;
         this.email = email;
         this.password = password;
+        this.roles = roles;
     }
 }
 
