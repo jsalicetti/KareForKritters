@@ -35,24 +35,10 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    public void saveApplication(Applicationdto application){
-        Application Newapplication = new Application();
+    public void saveApplication(Application application){
 
-        Newapplication.setInquireAdopt((application.getInquireAdopt()));
-        Newapplication.setAdoptedBefore((application.getAdoptedBefore()));
-        Newapplication.setLivingSituation((application.getLivingSituation()));
-        Newapplication.setRentOwn((application.getRentOwn()));
-        Newapplication.setFencedYard((application.getFencedYard()));
-        Newapplication.setLiveAlone((application.getLiveAlone()));
-        Newapplication.setLiveChildren((application.getLiveChildren()));
-        Newapplication.setHomeAllergies((application.getHomeAllergies()));
-        Newapplication.setExercisePet((application.getExercisePet()));
-        Newapplication.setTrainingPet((application.getTrainingPet()));
-        Newapplication.setPetsAtHome((application.getPetsAtHome()));
-        Newapplication.setCarePet((application.getCarePet()));
-        Newapplication.setHoursHome((application.getHoursHome()));
 
-        applicationRepository.save(Newapplication);
+        applicationRepository.save(application);
     }
 
     public User findUserByEmail(String Email){

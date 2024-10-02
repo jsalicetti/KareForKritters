@@ -39,6 +39,14 @@ public class Application {
     String carePet;
     @Column(name = "How many hours will the pet be left alone during the day?", nullable = false)
     String hoursHome;
+    String email;
+
+    String petGender;
+    String petAge;
+
+    String fullName;
+    boolean accepted;
+    boolean pending;
 }
 
 

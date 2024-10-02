@@ -1,23 +1,22 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import Locationpage from './components/Locationmappage';
-import Successpage from './components/Successpage';
-import Resourcespage from './components/Resourcespage';
-import Adoptionprocesspage from './components/Adoptionprocesspage';
-import Loginpage from './components/Loginpage';
-import Applicationpage from './components/Applicationpage';
-import Signuppage from './components/Signuppage';
-import Viewallpetspage from './components/Viewallpetspage';
-import Userprofilepage from './components/Userprofilepage';
-import Adminpage from './components/Adminpage';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./components/Homepage";
+import Locationpage from "./components/Locationmappage";
+import Successpage from "./components/Successpage";
+import Resourcespage from "./components/Resourcespage";
+import Adoptionprocesspage from "./components/Adoptionprocesspage";
+import Loginpage from "./components/Loginpage";
+import Applicationpage from "./components/Applicationpage";
+import Signuppage from "./components/Signuppage";
+import Viewallpetspage from "./components/Viewallpetspage";
+import Userprofilepage from "./components/Userprofilepage";
+import Adminpage from "./components/Adminpage";
 
 // * save for later - anchors for resources page
 // import Pettrainingpage from './components/Pettrainingpage';
 // import Healthpage from './components/Healthpage';
 // import Insurancepage from './components/Insurancepage';
 
-export default function App () {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -37,7 +36,6 @@ export default function App () {
   );
 }
 
- /* <Route path="/resources#pet-training" element={<Resourcespage />} />
+/* <Route path="/resources#pet-training" element={<Resourcespage />} />
         <Route path="/resources#health-tips" element={<Resourcespage />} />
         <Route path="/resources#pet-insurance" element={<Resourcespage />} /> */
-
