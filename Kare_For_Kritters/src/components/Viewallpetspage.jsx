@@ -45,41 +45,6 @@ const MeetYourNewBestfriend = () => {
       name: "Whiskers",
       description: "Playful tabby cat who loves to cuddle."
     },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
   ];
 
   const navItems = [
@@ -94,15 +59,8 @@ const MeetYourNewBestfriend = () => {
     { 
       name: 'WHO WE ARE', 
       items: [
-        { name: 'About Us', link: '/about' },
         { name: 'Success Stories', link: '/success' },
         { name: 'Locations', link: '/location' }
-      ]
-    },
-    { 
-      name: 'GET INVOLVED', 
-      items: [
-        { name: 'Submenu Item 1', link: '/get-involved' }
       ]
     },
     { 
@@ -189,10 +147,7 @@ const MeetYourNewBestfriend = () => {
             ))}
           </nav>
           <div className="flex items-center">
-            <div className="relative mr-4 hidden md:block">
-              <input type="search" placeholder="Search..." className="py-1 px-3 pr-8 rounded-full bg-orange-500 text-white placeholder-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-300" />
-              <MagnifyingGlassIcon className="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-orange-200" />
-            </div>
+            
             <button className="bg-white text-orange-600 px-4 py-1 rounded-full hover:bg-orange-100 transition duration-300">LOGIN</button>
           </div>
         </div>
@@ -211,7 +166,7 @@ const MeetYourNewBestfriend = () => {
       <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-16 text-center mt-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay in touch!</h2>
-          <p className="text-lg mb-8">Keep up to date with our little kritters</p>
+          <p className="text-lg mb-8">Keep up to date with your application!</p>
           <form className="max-w-md mx-auto flex">
             <input type="email" placeholder="Email Address" className="flex-grow py-3 px-4 rounded-l-full focus:outline-none focus:ring-2 focus:ring-orange-300" />
             <button type="submit" className="bg-white text-orange-600 px-6 py-3 rounded-r-full font-semibold hover:bg-orange-100 transition duration-300">Subscribe</button>
@@ -226,12 +181,7 @@ const MeetYourNewBestfriend = () => {
               <HeartIcon className="w-8 h-8 mr-2 text-orange-400" />
               <span className="text-2xl font-bold">Kare for Kritters</span>
             </div>
-            <div className="flex flex-wrap justify-center md:justify-end gap-6">
-              <a href="#" className="hover:text-orange-400 transition duration-300">About Us</a>
-              <a href="#" className="hover:text-orange-400 transition duration-300">Locations</a>
-              <a href="#" className="hover:text-orange-400 transition duration-300">Application Form</a>
-              <a href="#" className="hover:text-orange-400 transition duration-300">Terms of Service</a>
-            </div>
+            
           </div>
           <p className="text-center text-sm text-gray-400">&copy; 2023 Kare for Kritters. All rights reserved.</p>
         </div>

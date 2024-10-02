@@ -183,7 +183,7 @@ const SignupPage = () => {
       <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-16 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay in touch!</h2>
-          <p className="text-lg mb-8">Keep up to date with our little kritters</p>
+          <p className="text-lg mb-8">Keep up to date with your application!</p>
           <form className="max-w-md mx-auto flex">
             <input type="email" placeholder="Email Address" className="flex-grow py-3 px-4 rounded-l-full focus:outline-none focus:ring-2 focus:ring-orange-300" />
             <button type="submit" className="bg-white text-orange-600 px-6 py-3 rounded-r-full font-semibold hover:bg-orange-100 transition duration-300">Subscribe</button>
