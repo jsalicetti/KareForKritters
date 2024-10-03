@@ -20,7 +20,7 @@
    • Google Map API
 
  # Styling 
-   • Tailwind CSS
+   • React Tailwind CSS
 
 
 # Features
