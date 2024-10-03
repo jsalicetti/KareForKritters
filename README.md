@@ -10,42 +10,46 @@
 
 
 
-# Features 
+ 
 
 
  ## Project Type
  Frontend | Backend | Fullstack
 
- ## Front End 
-
-    • User (submit adoption application and check status)
-    • Admin (users, pets, application approval or denial + etc)
-    • Navigation bar with drop downs for friendly user experiences exploring other pages
-    • Home page / Adoption page / Application page / Locations page / Login page / Register page / Resources page / Success Stories page / View Adoptables page 
-    • Search bar 
-  
-## Back End
-    • Java
-    • MySQL
-
-
-
-# Additional Resources
-    • Figma
-    • HTML
-    • CSS
-    • React
-    • Tailwind
-
-
  # APIs
    • Google Map API
 
-   
- # Stretch Goals
-   • To be able to integrate donation (one-time or monthly) and sponsorship capabilities 
-   
+ # Styling 
+   • Tailwind CSS
 
+
+# Features
+
+ ## Front End 
+
+    • User (submit adoption application) : stores user information in the local storage 
+    • Admin (users, pets, application approval or denial + etc) : stores user role in the local storage
+    • Navigation bar with drop downs for friendly user experiences exploring other pages
+    • Home page / Adoption page / Application page / Locations page / Login page / Register page / Resources page / Success Stories page / View Adoptables page 
+    
+  
+  ## User Authentication
+
+    • Registration and login functionality (request gets sent to backend/server - backend processes the request and throws back a response) 
+
+  ## Navigation
+    • Navbar component created to allow for reusable code for all of the pages & allow for a user friendly experience.
+    • React router implemented for navigation between pages/views. 
+
+
+ 
+
+   
+ # Stretch Goals / Future Enhancements
+    • To be able to integrate donation (one-time or monthly) and sponsorship capabilities via stripe payment processing.
+    • To be able to have an a confirmation email sent to the user/applicant informing them that the application was successfully submitted.
+   
+  
 
 # Figma 
 Attached is the figma link for the initial design concept: https://www.figma.com/design/yvyVObqBCFo21LJjXW36NL/Kare-for-Kritters?node-id=0-1&node-type=canvas&t=GVvexQXq5ZGDFx6K-0
