@@ -6,44 +6,67 @@ const MeetYourNewBestfriend = () => {
   // Replace the pets array with real data including image URLs
   const pets = [
     {
-      image: "/images/dog1.jpg",
-      name: "Buddy",
-      description: "Friendly Golden Retriever looking for an active family."
+      image: "/Images-React/Chow-Barkley.jpg",
+      name: "CHOW BARKLEY",
+      age: "6 months old",
+      breed: "Purebred",
+      funFact: "Just learned how to do a little hop",
+      sex: "Male",
+      description: "Chow Barkley is an Adorable tiny pup looking for a loving family."
     },
     {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
+      image: "/Images-React/Qolla.jpg",
+      name: "QOLLA",
+      age: "6 year old",
+      breed: "Mixed",
+      funFact: "Loves to sleep in cardboard boxes",
+      sex: "Female",
+      description: "Qolla is a Friendly cat who loves all kinds of snacks."
     },
     {
-      image: "/images/dog1.jpg",
-      name: "Buddy",
-      description: "Friendly Golden Retriever looking for an active family."
+      image: "/Images-React/Ash.jpg",
+      name: "ASH",
+      age: "1 years old",
+      breed: "Purebred",
+      funFact: "Excellent swimmer",
+      sex: "Male",
+      description: "Ash is an energetic dog who enjoys outdoor activities."
     },
     {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
+      image: "/Images-React/Adventure.jpg",
+      name: "ADVENTURE",
+      age: "2 year old",
+      breed: "Mixed",
+      funFact: "Can open doors by jumping on the handle",
+      sex: "Female",
+      description: "Adventure is a curious cat with striking green eyes."
     },
     {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
+      image: "/Images-React/Marley.jpg",
+      name: "MARLEY",
+      age: "4 year old",
+      breed: "Mixed",
+      funFact: "Has a unique howl that sounds like singing",
+      sex: "Female",
+      description: "Marley is a friendly dog with a great sense of smell."
     },
     {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
+      image: "/Images-React/Noodle.jpg",
+      name: "NOODLE",
+      age: "3 year old",
+      breed: "Mixed",
+      funFact: "Loves to play fetch like a dog",
+      sex: "Female",
+      description: "Noodle is a majestic cat but loves a good nap."
     },
     {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
-    },
-    {
-      image: "/images/cat1.jpg",
-      name: "Whiskers",
-      description: "Playful tabby cat who loves to cuddle."
+      image: "/Images-React/Mouse.jpg",
+      name: "MOUSE",
+      age: "2 year old",
+      breed: "Mixed",
+      funFact: "Can dance on his hind legs",
+      sex: "Male",
+      description: "Mouse is an intelligent dog who learns tricks quickly."
     },
   ];
 
@@ -105,6 +128,10 @@ const MeetYourNewBestfriend = () => {
           <div className="flip-card-back w-full h-full absolute backface-hidden rotate-y-180 bg-white rounded-lg p-4 overflow-y-auto flex flex-col justify-between">
             <div>
               <h3 className="text-xl font-semibold mb-2">{pet.name}</h3>
+              <p className="text-gray-700 mb-1">Age: {pet.age}</p>
+              <p className="text-gray-700 mb-1">Breed: {pet.breed}</p>
+              <p className="text-gray-700 mb-1">Sex: {pet.sex}</p>
+              <p className="text-gray-700 mb-1">Fun Fact: {pet.funFact}</p>
               <p className="text-gray-700">{pet.description}</p>
             </div>
             <button 
