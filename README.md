@@ -26,7 +26,7 @@
 # Features
 
     • User (submit adoption application) : stored user information in the local storage 
-    • Admin (users, pets, application approval or denial + etc) : stores user role in the local storage
+    • Admin (users, pets, application approval or denial + etc) : stores user role in the backend
     • Navigation bar with drop downs for friendly user experiences exploring other pages
     • Home page / Adoption page / Application page / Locations page / Login page / Register page / Resources page / Success Stories page / View Adoptables page 
     
