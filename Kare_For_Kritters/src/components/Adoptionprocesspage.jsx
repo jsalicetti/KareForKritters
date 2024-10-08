@@ -82,6 +82,8 @@ const Adoptionprocesspage = () => {
           </div>
         </section>
 
+        {/* Eligibility requirements section*/}
+
         <section className="bg-white rounded-lg shadow-lg p-8 mb-16">
           <h2 className="text-3xl font-bold mb-6">Eligibility Requirements</h2>
           <p className="mb-4">

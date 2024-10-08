@@ -3,7 +3,7 @@ import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/reac
 import '../App.css'
 
 const MeetYourNewBestfriend = () => {
-  // Replace the pets array with real data including image URLs
+  
   const pets = [
     {
       image: "/Images-React/Chow-Barkley.jpg",
