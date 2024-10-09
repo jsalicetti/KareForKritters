@@ -52,4 +52,8 @@
 # Figma 
 Attached is the figma link for the initial design concept: https://www.figma.com/design/yvyVObqBCFo21LJjXW36NL/Kare-for-Kritters?node-id=0-1&node-type=canvas&t=GVvexQXq5ZGDFx6K-0
 
+# Schema (Tables Screenshot)
+Tables are as follows: User, Admin, Application, Pets, Profile.
+![Screenshot (52)](https://github.com/user-attachments/assets/120a893e-c1c7-4446-992d-7d4def5572fc)
+
  
