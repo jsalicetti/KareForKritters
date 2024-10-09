@@ -15,6 +15,7 @@ import Adminpage from "./components-pages/Adminpage";
 
 export default function App() {
   return (
+    
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/location" element={<Locationpage />} />

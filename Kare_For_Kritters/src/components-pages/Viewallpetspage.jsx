@@ -70,31 +70,6 @@ const MeetYourNewBestfriend = () => {
     },
   ];
 
-  const navItems = [
-    { 
-      name: 'ADOPT', 
-      items: [
-        { name: 'View All Pets', link: '/pets' },
-        { name: 'Adoption Process', link: '/adoption-process' },
-        { name: 'Adoption Application', link: '/adoption-application' }
-      ]
-    },
-    { 
-      name: 'WHO WE ARE', 
-      items: [
-        { name: 'Success Stories', link: '/success' },
-        { name: 'Locations', link: '/location' }
-      ]
-    },
-    { 
-      name: 'RESOURCES', 
-      items: [
-        { name: 'Pet Training', link: '/resources#pet-training' },
-        { name: 'Health Tips', link: '/resources#health-tips' },
-        { name: 'Pet Insurance', link: '/resources#pet-insurance' }
-      ]
-    }
-  ]
 
   const FlipCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false)
