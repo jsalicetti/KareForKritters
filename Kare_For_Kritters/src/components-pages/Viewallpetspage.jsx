@@ -1,75 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChevronDownIcon, MagnifyingGlassIcon, HeartIcon } from '@heroicons/react/24/solid'
 import '../App.css'
+import NavBar from './NavBar'
 
 const MeetYourNewBestfriend = () => {
-  
-  const pets = [
-    {
-      image: "/Images-React/Chow-Barkley.jpg",
-      name: "CHOW BARKLEY",
-      age: "6 months old",
-      breed: "Purebred",
-      funFact: "Just learned how to do a little hop",
-      sex: "Male",
-      description: "Chow Barkley is an Adorable tiny pup looking for a loving family."
-    },
-    {
-      image: "/Images-React/Qolla.jpg",
-      name: "QOLLA",
-      age: "6 year old",
-      breed: "Mixed",
-      funFact: "Loves to sleep in cardboard boxes",
-      sex: "Female",
-      description: "Qolla is a Friendly cat who loves all kinds of snacks."
-    },
-    {
-      image: "/Images-React/Ash.jpg",
-      name: "ASH",
-      age: "1 years old",
-      breed: "Purebred",
-      funFact: "Excellent swimmer",
-      sex: "Male",
-      description: "Ash is an energetic dog who enjoys outdoor activities."
-    },
-    {
-      image: "/Images-React/Adventure.jpg",
-      name: "ADVENTURE",
-      age: "2 year old",
-      breed: "Mixed",
-      funFact: "Can open doors by jumping on the handle",
-      sex: "Female",
-      description: "Adventure is a curious cat with striking green eyes."
-    },
-    {
-      image: "/Images-React/Marley.jpg",
-      name: "MARLEY",
-      age: "4 year old",
-      breed: "Mixed",
-      funFact: "Has a unique howl that sounds like singing",
-      sex: "Female",
-      description: "Marley is a friendly dog with a great sense of smell."
-    },
-    {
-      image: "/Images-React/Noodle.jpg",
-      name: "NOODLE",
-      age: "3 year old",
-      breed: "Mixed",
-      funFact: "Loves to play fetch like a dog",
-      sex: "Female",
-      description: "Noodle is a majestic cat but loves a good nap."
-    },
-    {
-      image: "/Images-React/Mouse.jpg",
-      name: "MOUSE",
-      age: "2 year old",
-      breed: "Mixed",
-      funFact: "Can dance on his hind legs",
-      sex: "Male",
-      description: "Mouse is an intelligent dog who learns tricks quickly."
-    },
-  ];
+  const [pets,setPets] = useState ([])
 
+useEffect(()=>{
+  getpets()
+},[])
+
+async function getpets() {
+
+  try {
+    let petinfo = await fetch ("http://localhost:8081/pets")
+    let data = await petinfo.json()
+    console.log(data)
+    let petdata = [...data] 
+    petdata.forEach(pet=> {
+      if(pet.name == "CHOW BARKLEY"){
+        pet.image= `/Images-React/CHOW.jpg`
+      }else{
+        pet.image= `/Images-React/${pet.name}.jpg`
+      }
+    })
+
+    setPets(petdata)
+  } catch (error) {
+    console.error(error)
+  }
+  
+}
+  
 
   const FlipCard = ({ pet }) => {
     const [isFlipped, setIsFlipped] = useState(false)
@@ -92,7 +54,7 @@ const MeetYourNewBestfriend = () => {
         <div className={`flip-card-inner w-full h-full relative transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
           <div className="flip-card-front w-full h-full absolute backface-hidden overflow-hidden rounded-lg">
             <img 
-              src={pet.image} 
+              src={pet.image}
               alt={pet.name} 
               className="w-full h-full object-cover object-center"
             />
@@ -123,7 +85,7 @@ const MeetYourNewBestfriend = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-400 to-blue-200 text-gray-800 font-sans">
-      <header className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-4 sticky top-0 z-50 shadow-lg">
+      {/* <header className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-4 sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <a href="/" className="flex items-center text-2xl font-bold">
             <HeartIcon className="w-8 h-8 mr-2" />
@@ -153,7 +115,9 @@ const MeetYourNewBestfriend = () => {
             <button className="bg-white text-orange-600 px-4 py-1 rounded-full hover:bg-orange-100 transition duration-300">LOGIN</button>
           </div>
         </div>
-      </header>
+      </header> */}
+
+      <NavBar/>
 
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-5xl font-bold text-center mb-12">Meet your new Bestfriend!</h1>
