@@ -21,8 +21,9 @@ public class userController extends UserServiceImpl {
 
     @Autowired
     ProfileRepository profileRepository;
-    public userController(UserRepository userRepository, PasswordEncoder passwordEncoder, ApplicationRepository applicationRepository) {
+    public userController(UserRepository userRepository, PasswordEncoder passwordEncoder, ApplicationRepository applicationRepository, ProfileRepository profileRepository) {
         super(userRepository, passwordEncoder, applicationRepository);
+        this.profileRepository = profileRepository;
     }
 
     @PostMapping("/register")

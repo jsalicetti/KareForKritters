@@ -13,14 +13,24 @@ public class Pets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer petID;
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     String name;
-    @Column(name = "age", nullable = false)
-    Integer age;
-    @Column(name = "breed", nullable = false)
+    @Column(name = "age")
+    String age;
+    @Column(name = "breed" )
     String breed;
-    @Column(name = "uid", nullable = false)
+    @Column(name = "uid")
     Integer uid;
+    @Column (name = "funFact")
+    String funFact;
+    @Column (name = "sex")
+    String sex;
+    @Column (name = "description")
+    String description;
+    @Column (name= "favoriteToy")
+    String favoriteToy;
+    @Column (name = "story", length = 5000)
+    String story;
 }
 
 

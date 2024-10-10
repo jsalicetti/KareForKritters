@@ -13,8 +13,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer UID;
-    @Column(name = "UserName" ,nullable = false)
-    String UserName;
+    @Column(name = "userName")
+    String userName;
     @Column(name = "email" ,nullable = false, unique = true)
     String email;
     @Column(name = "password" ,nullable = false)
@@ -25,7 +25,7 @@ public class User {
 
     public User(Integer UID, String userName, String email, String password, String roles) {
         this.UID = UID;
-        UserName = userName;
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.roles = roles;

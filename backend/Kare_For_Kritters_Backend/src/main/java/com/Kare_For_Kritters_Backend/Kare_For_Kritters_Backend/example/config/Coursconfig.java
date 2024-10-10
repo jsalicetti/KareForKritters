@@ -15,25 +15,28 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity // enables spring security for the app
 public class Coursconfig {
 
+    // encoding passwords using BCrypt
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    // sets up security settings and requests authorization
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.cors(Customizer.withDefaults()).csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/**", "/register", "/Login", "/sendapplication", "/application/**", "/profile"
-                                ,"/application/accept","/application/deny").permitAll()
+                                ,"/application/accept","/application/deny","/pets").permitAll()
                         .anyRequest().authenticated());
         return http.build();
     }
 
+    // configures CORS settings for the app
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
 
@@ -42,9 +45,9 @@ public class Coursconfig {
 //        config.addAllowedOrigin("*");
 
 
-        config.addAllowedMethod("*");
+        config.addAllowedMethod("*"); // allows HTTP methods like GET,POST etc.
         config.addAllowedHeader("*");
-        config.setAllowCredentials(true);
+        config.setAllowCredentials(true); // allows cookies and credentials to be included in CORS request
 
         UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
