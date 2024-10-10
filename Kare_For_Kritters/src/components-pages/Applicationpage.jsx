@@ -75,7 +75,7 @@ const AdoptionApplication = () => {
     const applicationData = Object.fromEntries(formData);
     console.log(applicationData);
     try {
-      const response = await fetch("http://localhost:8081/sendapplication", {
+      const response = await fetch("http://localhost:8081/application", {
         method: "POST",
         body: JSON.stringify(applicationData),
         headers: {
@@ -100,6 +100,8 @@ const AdoptionApplication = () => {
       );
     }
   };
+
+
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-400 to-blue-200 text-gray-800 font-sans">
